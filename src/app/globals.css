@@ -1,26 +1,119 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdfcfb;
+  --surface: #ffffff;
+  --surface-soft: #f8f4f1;
+  --beige: #f2e5dd;
+  --beige-light: #faf6f3;
+  --lavender: #897495;
+  --lavender-medium: #9f91a8;
+  --lavender-soft: #e1dbe2;
+  --lavender-pale: #f2eef4;
+  --text-primary: #292829;
+  --text-secondary: #777274;
+  --text-muted: #9a9598;
+  --border: #eae3e5;
+  --dark: #262526;
+  --dark-soft: #303031;
+  --white: #ffffff;
+
+  --radius-sm: 16px;
+  --radius-md: 24px;
+  --radius-lg: 28px;
+  --radius-xl: 34px;
+
+  --transition-premium: 350ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body {
+    @apply bg-background text-text-primary antialiased;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  ::selection {
+    background-color: var(--lavender-soft);
+    color: var(--text-primary);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--lavender);
+    outline-offset: 3px;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .grain-dark {
+    background-image: radial-gradient(
+        circle at 20% 20%,
+        rgba(255, 255, 255, 0.03) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 80%,
+        rgba(255, 255, 255, 0.02) 0%,
+        transparent 40%
+      );
+    background-size: 4px 4px, 6px 6px;
+  }
+
+  .gradient-about {
+    background: linear-gradient(
+      135deg,
+      var(--beige-light) 0%,
+      var(--surface) 45%,
+      var(--lavender-pale) 100%
+    );
+  }
+
+  .gradient-cta {
+    background: linear-gradient(
+      135deg,
+      var(--beige-light) 0%,
+      var(--lavender-pale) 60%,
+      var(--beige) 100%
+    );
+  }
+
+  .gradient-stats {
+    background: linear-gradient(
+      to right,
+      #beaecd 0%,
+      #a795b0 50%,
+      #867793 100%
+    );
+  }
+
+  .gradient-testimonial-card {
+    background: linear-gradient(
+      145deg,
+      var(--surface) 0%,
+      var(--lavender-pale) 100%
+    );
+  }
 }
