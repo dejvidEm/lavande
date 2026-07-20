@@ -47,7 +47,7 @@ export function BenefitsSection() {
                 <h3 className="text-sm font-medium tracking-[-0.02em] text-text-primary sm:text-lg">
                   {benefit.title}
                 </h3>
-                <p className="mt-1.5 text-xs leading-relaxed text-text-secondary sm:mt-2 sm:text-sm">
+                <p className="mt-1.5 line-clamp-2 min-h-[2.5rem] text-xs leading-relaxed text-text-secondary sm:mt-2 sm:min-h-[2.875rem] sm:text-sm">
                   {benefit.description}
                 </p>
               </div>
