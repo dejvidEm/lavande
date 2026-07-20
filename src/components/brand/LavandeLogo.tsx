@@ -11,9 +11,24 @@ type LavandeLogoProps = {
 };
 
 const sizes = {
-  full: { width: 140, height: 140, className: "h-14 w-auto md:h-16" },
-  compact: { width: 120, height: 120, className: "h-11 w-auto" },
-  mark: { width: 48, height: 48, className: "h-10 w-10" },
+  full: {
+    src: siteImages.logoNav,
+    width: 785,
+    height: 318,
+    className: "h-10 w-auto sm:h-11 md:h-12",
+  },
+  compact: {
+    src: siteImages.logoNav,
+    width: 785,
+    height: 318,
+    className: "h-11 w-auto sm:h-12 md:h-14",
+  },
+  mark: {
+    src: siteImages.logo,
+    width: 48,
+    height: 48,
+    className: "h-10 w-10",
+  },
 } as const;
 
 export function LavandeLogo({
@@ -26,7 +41,7 @@ export function LavandeLogo({
 
   const logo = (
     <Image
-      src={siteImages.logo}
+      src={config.src}
       alt={`${siteConfig.name} logo`}
       width={config.width}
       height={config.height}

@@ -3,6 +3,7 @@ import { siteImages } from "./site";
 export type LessonPage = {
   slug: string;
   title: string;
+  titleHighlight: string;
   eyebrow: string;
   intro: string;
   description: string;
@@ -23,6 +24,7 @@ export const lessonPages: LessonPage[] = [
   {
     slug: "reformer-pilates",
     title: "Reformer Pilates",
+    titleHighlight: "Reformer",
     eyebrow: "REFORMER PILATES",
     intro: "Precízny pohyb na reformeri pre silu, stabilitu a dlhšie svaly.",
     description:
@@ -60,6 +62,7 @@ export const lessonPages: LessonPage[] = [
   {
     slug: "mat-pilates",
     title: "Mat Pilates",
+    titleHighlight: "Mat",
     eyebrow: "MAT PILATES",
     intro: "Vedomá práca s vlastnou hmotnosťou pre silu, dych a kontrolu.",
     description:
@@ -97,6 +100,7 @@ export const lessonPages: LessonPage[] = [
   {
     slug: "individualna-lekcia",
     title: "Individuálna lekcia",
+    titleHighlight: "Individuálna",
     eyebrow: "INDIVIDUÁLNA LEKCIA",
     intro: "Lekcia len pre teba — tempo, ciele aj náročnosť na mieru.",
     description:
@@ -134,6 +138,7 @@ export const lessonPages: LessonPage[] = [
   {
     slug: "pilates-pre-zaciatocnice",
     title: "Pilates pre začiatočníčky",
+    titleHighlight: "začiatočníčky",
     eyebrow: "PILATES PRE ZAČIATOČNÍČKY",
     intro: "Bezpečný a pokojný úvod do Pilates od prvého pohybu.",
     description:

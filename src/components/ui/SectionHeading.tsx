@@ -1,10 +1,13 @@
 import { cn } from "@/lib/utils";
 import type { ReactNode } from "react";
 import { Eyebrow } from "./Eyebrow";
+import { HighlightedText } from "./HighlightedText";
 
 type SectionHeadingProps = {
   eyebrow?: string;
   title: string;
+  highlight?: string;
+  highlightClassName?: string;
   description?: string;
   align?: "left" | "center";
   className?: string;
@@ -15,6 +18,8 @@ type SectionHeadingProps = {
 export function SectionHeading({
   eyebrow,
   title,
+  highlight,
+  highlightClassName,
   description,
   align = "left",
   className,
@@ -36,7 +41,15 @@ export function SectionHeading({
           titleClassName
         )}
       >
-        {title}
+        {highlight ? (
+          <HighlightedText
+            text={title}
+            highlight={highlight}
+            highlightClassName={highlightClassName}
+          />
+        ) : (
+          title
+        )}
       </h2>
       {description && (
         <p className="mt-5 max-w-2xl text-base leading-relaxed text-text-secondary sm:text-lg sm:leading-[1.65]">

@@ -68,7 +68,7 @@ export function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) 
 
       <div className="relative">
         <span
-          className="pointer-events-none absolute -left-2 -top-6 select-none text-[120px] leading-none text-lavender/10"
+          className="pointer-events-none absolute -left-2 -top-6 select-none text-[120px] leading-none text-lavender lg:-left-3 lg:-top-7 lg:text-[150px] xl:text-[165px]"
           aria-hidden="true"
         >
           “

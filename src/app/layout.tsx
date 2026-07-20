@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
@@ -47,6 +48,7 @@ export default function RootLayout({
   return (
     <html lang="sk" className={`${manrope.variable} h-full scroll-smooth`}>
       <body className="min-h-full bg-background font-sans text-text-primary antialiased">
+        <ScrollToTop />
         <Header />
         <main>{children}</main>
         <Footer />

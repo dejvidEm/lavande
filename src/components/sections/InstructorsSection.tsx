@@ -7,6 +7,7 @@ import { LavenderBranch } from "@/components/brand/LavenderBranch";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { HighlightedText } from "@/components/ui/HighlightedText";
 import { MotionSection } from "@/components/ui/MotionSection";
 import { leadInstructor } from "@/data/instructors";
 import { siteConfig } from "@/data/site";
@@ -18,7 +19,7 @@ export function InstructorsSection() {
   return (
     <MotionSection id="lektorky" className="py-section-sm md:py-section">
       <Container>
-        <div className="grid items-stretch gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12">
+        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12">
           {/* Fotka vľavo — opačne než sekcia O nás */}
           <motion.div
             variants={fadeUp}
@@ -28,7 +29,7 @@ export function InstructorsSection() {
             transition={defaultTransition}
             className="relative order-2 lg:order-1"
           >
-            <div className="relative aspect-[4/5] overflow-hidden rounded-card sm:aspect-[5/6] lg:min-h-[580px]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-card sm:aspect-[5/6] lg:min-h-[490px]">
               <Image
                 src={instructor.image}
                 alt={instructor.imageAlt}
@@ -39,27 +40,17 @@ export function InstructorsSection() {
               />
             </div>
 
-            <div className="absolute left-4 top-4 flex flex-wrap gap-2 sm:left-6 sm:top-6">
-              {instructor.courses.slice(0, 3).map((course) => (
+            <div className="absolute left-4 top-4 flex flex-wrap gap-2.5 sm:left-6 sm:top-6 sm:gap-3">
+              {instructor.courses.map((course) => (
                 <span
                   key={course.id}
-                  className="rounded-pill border border-white/25 bg-dark/55 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm"
+                  className="rounded-pill border border-white/25 bg-dark/55 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm sm:px-5 sm:py-2.5 sm:text-[15px]"
                 >
                   {course.label}
                 </span>
               ))}
             </div>
 
-            <div className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6">
-              <div className="rounded-[20px] border border-lavender-soft bg-lavender-pale/95 px-5 py-4 backdrop-blur-sm">
-                <p className="text-3xl font-medium tracking-[-0.03em] text-lavender">
-                  {instructor.experience}
-                </p>
-                <p className="text-sm text-text-secondary">
-                  {instructor.experienceLabel}
-                </p>
-              </div>
-            </div>
           </motion.div>
 
           {/* Info panel vpravo — iný štýl než gradient karta v O nás */}
@@ -71,15 +62,18 @@ export function InstructorsSection() {
             transition={{ ...defaultTransition, delay: 0.1 }}
             className="order-1 flex flex-col justify-center lg:order-2"
           >
-            <div className="relative overflow-hidden rounded-card border border-border bg-surface p-8 sm:p-10 lg:p-11 xl:p-12">
+            <div className="relative overflow-hidden rounded-card border border-border bg-surface p-8 sm:p-10 lg:p-9 xl:p-10">
               <LavenderBranch
                 className="absolute -right-2 top-6 h-28 w-16 text-lavender"
                 opacity={0.12}
               />
 
               <Eyebrow className="mb-4">LEKTORKY</Eyebrow>
-              <h2 className="text-balance text-[2rem] font-medium leading-[1.08] tracking-[-0.035em] text-text-primary sm:text-[2.375rem] lg:text-[2.75rem]">
-                V bezpečných rukách od prvého pohybu.
+              <h2 className="text-balance text-[2rem] font-medium leading-[1.08] tracking-[-0.035em] text-text-primary sm:text-[2.375rem] lg:text-[2.5rem]">
+                <HighlightedText
+                  text="V bezpečných rukách od prvého pohybu."
+                  highlight="bezpečných"
+                />
               </h2>
 
               <div className="mt-6 border-b border-border pb-6">
@@ -94,26 +88,8 @@ export function InstructorsSection() {
               <p className="mt-6 text-base leading-relaxed text-text-secondary sm:text-[17px] sm:leading-[1.65]">
                 {instructor.bio}
               </p>
-              <p className="mt-4 text-base leading-relaxed text-text-muted sm:text-[17px] sm:leading-[1.65]">
-                {instructor.approach}
-              </p>
 
-              <div className="mt-8">
-                <p className="text-xs font-medium uppercase tracking-[0.14em] text-text-muted">
-                  Kurzy & zameranie
-                </p>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {instructor.courses.map((course) => (
-                    <li key={course.id}>
-                      <span className="inline-flex rounded-pill border border-lavender-soft bg-lavender-pale/60 px-3.5 py-1.5 text-sm text-text-primary">
-                        {course.label}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <ul className="mt-8 space-y-3 border-t border-border pt-8">
+              <ul className="mt-6 space-y-2.5 border-t border-border pt-6 lg:mt-7 lg:pt-7">
                 {instructor.highlights.map((item) => (
                   <li
                     key={item}
@@ -125,8 +101,8 @@ export function InstructorsSection() {
                 ))}
               </ul>
 
-              <Button href={siteConfig.bookingUrl} className="mt-9">
-                Rezervovať lekciu u {instructor.name}
+              <Button href={siteConfig.bookingUrl} className="mt-7 lg:mt-8">
+                Rezervovať lekciu u Alexandry
               </Button>
             </div>
           </motion.div>

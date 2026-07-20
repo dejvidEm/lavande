@@ -15,11 +15,12 @@ export function BenefitsSection() {
         <SectionHeading
           eyebrow="PREČO LAVANDE"
           title="Viac než cvičenie. Priestor, kam sa budeš rada vracať."
+          highlight="vracať"
           className="mb-12 md:mb-16"
         />
 
         <motion.div
-          className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4"
+          className="grid grid-cols-2 gap-3 sm:gap-6 xl:grid-cols-4"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -32,21 +33,21 @@ export function BenefitsSection() {
               transition={defaultTransition}
               className="group relative overflow-hidden rounded-card-sm"
             >
-              <div className="relative aspect-[3/4] w-full">
+              <div className="relative aspect-[4/5] w-full sm:aspect-[3/4]">
                 <Image
                   src={benefit.image}
                   alt={benefit.imageAlt}
                   fill
                   className="object-cover transition duration-500 group-hover:scale-[1.02]"
                   style={{ objectPosition: benefit.objectPosition }}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1280px) 50vw, 25vw"
                 />
               </div>
-              <div className="absolute inset-x-3 bottom-3 rounded-[20px] border border-white/40 bg-white/90 p-5 backdrop-blur-[2px] sm:inset-x-4 sm:bottom-4 sm:p-6">
-                <h3 className="text-lg font-medium tracking-[-0.02em] text-text-primary">
+              <div className="absolute inset-x-2 bottom-2 rounded-[16px] border border-white/40 bg-white/90 p-3 backdrop-blur-[2px] sm:inset-x-4 sm:bottom-4 sm:rounded-[20px] sm:p-6">
+                <h3 className="text-sm font-medium tracking-[-0.02em] text-text-primary sm:text-lg">
                   {benefit.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+                <p className="mt-1.5 text-xs leading-relaxed text-text-secondary sm:mt-2 sm:text-sm">
                   {benefit.description}
                 </p>
               </div>

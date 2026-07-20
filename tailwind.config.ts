@@ -24,6 +24,7 @@ const config: Config = {
         border: "var(--border)",
         dark: "var(--dark)",
         "dark-soft": "var(--dark-soft)",
+        "dark-ui": "var(--dark-ui)",
       },
       fontFamily: {
         sans: ["var(--font-manrope)", "system-ui", "sans-serif"],

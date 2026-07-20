@@ -12,6 +12,7 @@ export const siteConfig = {
 
 export const siteImages = {
   logo: "/brand/lavande-studio-logo.png",
+  logoNav: "/brand/lavande-studio-logo-nav.png",
   heroBackground: "/images/lavande/hero-background.jpg",
   hero: "/images/lavande/hero.png",
   studio: "/images/lavande/studio.png",

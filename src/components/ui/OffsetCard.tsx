@@ -8,6 +8,7 @@ type OffsetCardProps = {
   className?: string;
   offsetClassName?: string;
   hover?: boolean;
+  shadow?: boolean;
 };
 
 export function OffsetCard({
@@ -15,16 +16,19 @@ export function OffsetCard({
   className,
   offsetClassName,
   hover = true,
+  shadow = true,
 }: OffsetCardProps) {
   return (
     <div className="group relative">
-      <div
-        className={cn(
-          "absolute inset-0 translate-x-[10px] translate-y-[10px] rounded-card-sm bg-lavender-pale",
-          offsetClassName
-        )}
-        aria-hidden="true"
-      />
+      {shadow && (
+        <div
+          className={cn(
+            "absolute inset-0 translate-x-[10px] translate-y-[10px] rounded-card-sm bg-lavender-pale",
+            offsetClassName
+          )}
+          aria-hidden="true"
+        />
+      )}
       <div
         className={cn(
           "relative rounded-card-sm border border-border bg-surface transition-transform duration-premium",

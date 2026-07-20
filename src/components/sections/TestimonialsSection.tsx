@@ -15,6 +15,7 @@ export function TestimonialsSection() {
             <SectionHeading
               eyebrow="SKÚSENOSTI KLIENTOK"
               title="Miesto, kde sa výsledky začínajú dobrým pocitom."
+              highlight="pocitom"
               titleClassName="text-white"
               className="[&_p:first-child]:text-white/50 [&_p:last-child]:text-white/70"
             />

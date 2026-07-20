@@ -20,7 +20,7 @@ export function Accordion({ items }: AccordionProps) {
         return (
           <div
             key={item.id}
-            className="overflow-hidden rounded-pill border border-border bg-surface"
+            className="overflow-hidden rounded-[20px] border border-border bg-surface"
           >
             <h3>
               <button
@@ -34,14 +34,14 @@ export function Accordion({ items }: AccordionProps) {
                 <span className="text-[15px] font-medium leading-snug text-text-primary sm:text-base">
                   {item.question}
                 </span>
-                <span
+                <Plus
                   className={cn(
-                    "flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-lavender-pale text-lavender transition-transform duration-300",
+                    "h-6 w-6 shrink-0 text-text-secondary transition-transform duration-300",
                     isOpen && "rotate-45"
                   )}
-                >
-                  <Plus className="h-4 w-4" strokeWidth={2} />
-                </span>
+                  strokeWidth={1.75}
+                  aria-hidden="true"
+                />
               </button>
             </h3>
             <div

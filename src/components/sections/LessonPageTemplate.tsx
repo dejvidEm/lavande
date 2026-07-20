@@ -8,6 +8,7 @@ import { LavenderBranch } from "@/components/brand/LavenderBranch";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
+import { HighlightedText } from "@/components/ui/HighlightedText";
 import { OffsetCard } from "@/components/ui/OffsetCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import type { LessonPage } from "@/data/lesson-pages";
@@ -44,7 +45,10 @@ export function LessonPageTemplate({
             >
               <Eyebrow className="mb-4">{lesson.eyebrow}</Eyebrow>
               <h1 className="text-balance text-[2.25rem] font-medium leading-[1.06] tracking-[-0.04em] text-text-primary sm:text-[2.75rem] lg:text-[3.25rem]">
-                {lesson.title}
+                <HighlightedText
+                  text={lesson.title}
+                  highlight={lesson.titleHighlight}
+                />
               </h1>
               <p className="mt-5 text-lg leading-relaxed text-text-secondary">
                 {lesson.intro}
@@ -111,6 +115,7 @@ export function LessonPageTemplate({
               <SectionHeading
                 eyebrow="ČO ŤA ČAKÁ"
                 title="Lekcia s dôrazom na techniku a pocit."
+                highlight="pocit"
               />
               <ul className="mt-8 space-y-4">
                 {lesson.sessionFocus.map((item) => (
@@ -136,6 +141,7 @@ export function LessonPageTemplate({
               <SectionHeading
                 eyebrow="PRE KOHO"
                 title="Kto si túto lekciu zamiluje."
+                highlight="zamiluje"
               />
               <ul className="mt-8 space-y-4">
                 {lesson.forWhom.map((item) => (
@@ -158,6 +164,7 @@ export function LessonPageTemplate({
           <SectionHeading
             eyebrow="PRÍNOSY"
             title="Čo ti pravidelná prax prinesie."
+            highlight="prinesie"
             className="mb-12"
           />
           <div className="grid gap-6 sm:grid-cols-2">
@@ -191,7 +198,8 @@ export function LessonPageTemplate({
             <div className="relative max-w-2xl">
               <Eyebrow className="mb-4 text-lavender-medium">PRIPRAVENÁ ZAČAŤ?</Eyebrow>
               <h2 className="text-balance text-[1.75rem] font-medium leading-[1.1] tracking-[-0.035em] sm:text-[2.25rem]">
-                Rezervuj si {lesson.title.toLowerCase()} vo Lavande.
+                Rezervuj si {lesson.title.toLowerCase()} vo{" "}
+                <span className="text-lavender">Lavande</span>.
               </h2>
               <p className="mt-4 text-base leading-relaxed text-text-secondary sm:text-lg">
                 {lesson.highlights[0]}
@@ -213,6 +221,7 @@ export function LessonPageTemplate({
             <SectionHeading
               eyebrow="ĎALŠIE LEKCIE"
               title="Preskúmaj aj ostatné formy cvičenia."
+              highlight="cvičenia"
               className="mb-10"
             />
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

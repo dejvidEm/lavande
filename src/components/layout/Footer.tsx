@@ -22,8 +22,11 @@ export function Footer() {
   return (
     <footer id="kontakt" className="pb-8 pt-section-sm md:pt-section-md">
       <Container>
-        <div className="relative overflow-hidden rounded-card bg-dark px-6 py-10 text-white grain-dark sm:px-10 sm:py-12 lg:px-12 lg:py-14">
-          <LavenderBranch className="absolute -bottom-8 right-8 h-48 w-28 text-lavender" opacity={0.08} />
+        <div className="relative overflow-hidden rounded-card bg-dark-ui px-6 py-10 text-white grain-dark sm:px-10 sm:py-12 lg:px-12 lg:py-14">
+          <LavenderBranch
+            className="absolute -bottom-10 -right-14 h-[17rem] w-[10.5rem] text-lavender sm:-bottom-8 sm:right-8 sm:h-48 sm:w-28"
+            opacity={0.08}
+          />
 
           <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr] lg:gap-8">
             <div>
@@ -97,8 +100,8 @@ export function Footer() {
           </p>
 
           <div className="mt-10 flex flex-col gap-8 border-t border-white/10 pt-8 lg:flex-row lg:items-end lg:justify-between">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
-              <LavandeLogo variant="mark" href="/" className="brightness-0 invert" />
+            <div className="flex flex-col items-start gap-3">
+              <LavandeLogo variant="compact" href="/" className="brightness-0 invert" />
               <p className="text-sm text-white/50">
                 © 2026 {siteConfig.name}. Všetky práva vyhradené.
               </p>

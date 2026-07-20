@@ -9,6 +9,7 @@ export default function LessonNotFound() {
         <SectionHeading
           eyebrow="404"
           title="Táto lekcia neexistuje."
+          highlight="neexistuje"
           description="Skontroluj odkaz alebo sa vráť na prehľad lekcií."
         />
         <Link

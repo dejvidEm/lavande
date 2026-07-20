@@ -18,6 +18,7 @@ export function FAQSection() {
               <SectionHeading
                 eyebrow="FAQ"
                 title="Odpovede na otázky pred prvou lekciou."
+                highlight="otázky"
                 description="Nenašla si odpoveď? Napíš nám a radi ti poradíme s výberom vhodnej lekcie."
               />
               <Button
