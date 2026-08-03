@@ -38,6 +38,9 @@ export function BenefitsSection() {
                   src={benefit.image}
                   alt={benefit.imageAlt}
                   fill
+                  // Dekoratívne dlaždice sa zobrazujú max. na štvrtine šírky,
+                  // nižšia kvalita tu nie je viditeľná.
+                  quality={65}
                   className="object-cover transition duration-500 group-hover:scale-[1.02]"
                   style={{ objectPosition: benefit.objectPosition }}
                   sizes="(max-width: 640px) 50vw, (max-width: 1280px) 50vw, 25vw"

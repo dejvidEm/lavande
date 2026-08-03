@@ -22,8 +22,13 @@ export function ScrollToTop() {
   const pathname = usePathname();
 
   useEffect(() => {
+    // Pri navigácii na kotvu (napr. /#lekcie z podstránky) musí zostať
+    // v platnosti scroll prehliadača na cieľovú sekciu.
+    if (window.location.hash) return;
+
     forceScrollTop();
-    requestAnimationFrame(forceScrollTop);
+    const frame = requestAnimationFrame(forceScrollTop);
+    return () => cancelAnimationFrame(frame);
   }, [pathname]);
 
   return null;

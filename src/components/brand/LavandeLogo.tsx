@@ -10,17 +10,19 @@ type LavandeLogoProps = {
   priority?: boolean;
 };
 
+// Rozmery zodpovedajú 2× najväčšiemu zobrazeniu, aby Next negeneroval
+// zbytočne veľké varianty pre logo vysoké max. 56 px.
 const sizes = {
   full: {
     src: siteImages.logoNav,
-    width: 785,
-    height: 318,
+    width: 321,
+    height: 130,
     className: "h-10 w-auto sm:h-11 md:h-12",
   },
   compact: {
     src: siteImages.logoNav,
-    width: 785,
-    height: 318,
+    width: 321,
+    height: 130,
     className: "h-11 w-auto sm:h-12 md:h-14",
   },
   mark: {
@@ -34,7 +36,7 @@ const sizes = {
 export function LavandeLogo({
   variant = "full",
   className,
-  href = "#",
+  href = "/",
   priority = false,
 }: LavandeLogoProps) {
   const config = sizes[variant];
@@ -46,6 +48,9 @@ export function LavandeLogo({
       width={config.width}
       height={config.height}
       priority={priority}
+      // Paletové PNG (3,6 kB) je menšie než čokoľvek, čo z neho spraví
+      // optimalizátor, takže sa servíruje priamo.
+      unoptimized={variant !== "mark"}
       className={cn(config.className, "object-contain", className)}
     />
   );

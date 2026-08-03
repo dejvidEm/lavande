@@ -22,7 +22,7 @@ export const leadInstructor: InstructorProfile = {
   name: "Alexandra",
   role: "Zakladateľka & hlavná lektorka",
   bio: "Každú lekciu vedem s dôrazom na bezpečnú techniku, dych a pocit istoty v tele. Verím, že sila má byť jemná, vedomá a dlhodobo udržateľná.",
-  image: siteImages.instructors.lucia,
+  image: siteImages.instructors.alexandra,
   imageAlt: "Lektorka Alexandra pri cvičení Reformer Pilates v štúdiu Lavande.",
   objectPosition: "center 25%",
   courses: [

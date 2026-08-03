@@ -43,7 +43,7 @@ export function HeroSection() {
               alt="Žena cvičí jemný strečing v teplom svetle minimalistického Pilates štúdia."
               fill
               priority
-              unoptimized
+              quality={90}
               className="object-cover object-[center_65%] sm:object-[center_60%]"
               sizes="100vw"
             />

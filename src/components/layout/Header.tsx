@@ -15,12 +15,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const prefersReducedMotion = useReducedMotion();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -30,13 +25,24 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = menuOpen ? "hidden" : "";
+    if (!menuOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+
     return () => {
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
     };
   }, [menuOpen]);
 
   const closeMenu = () => setMenuOpen(false);
+  // Portál sa počas SSR preskočí; menu sa aj tak dá otvoriť až po hydratácii.
+  const canUsePortal = typeof document !== "undefined";
 
   return (
     <header
@@ -78,13 +84,18 @@ export function Header() {
           className="flex h-12 w-12 items-center justify-center rounded-full border border-border bg-surface lg:hidden"
           aria-label={menuOpen ? "Zavrieť menu" : "Otvoriť menu"}
           aria-expanded={menuOpen}
+          aria-controls="mobilne-menu"
           onClick={() => setMenuOpen((open) => !open)}
         >
-          {menuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {menuOpen ? (
+            <X className="h-5 w-5" aria-hidden="true" />
+          ) : (
+            <Menu className="h-5 w-5" aria-hidden="true" />
+          )}
         </button>
       </Container>
 
-      {mounted &&
+      {canUsePortal &&
         createPortal(
           <AnimatePresence>
             {menuOpen && (
@@ -100,6 +111,7 @@ export function Header() {
                   onClick={closeMenu}
                 />
                 <motion.div
+                  id="mobilne-menu"
                   initial={prefersReducedMotion ? false : { opacity: 0, y: -8 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={prefersReducedMotion ? undefined : { opacity: 0, y: -8 }}

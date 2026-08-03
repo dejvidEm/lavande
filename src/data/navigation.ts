@@ -1,6 +1,9 @@
+import { socialLinks } from "./site";
+
 export type NavLink = {
   label: string;
   href: string;
+  external?: boolean;
 };
 
 export const mainNavLinks: NavLink[] = [
@@ -13,10 +16,19 @@ export const mainNavLinks: NavLink[] = [
 
 export const footerNavLinks: NavLink[] = [...mainNavLinks];
 
+export const legalNavLinks: NavLink[] = [
+  { label: "Obchodné podmienky", href: "/obchodne-podmienky" },
+  { label: "Ochrana osobných údajov", href: "/ochrana-osobnych-udajov" },
+  { label: "Cookies", href: "/ochrana-osobnych-udajov#cookies" },
+];
+
 export const footerSecondaryLinks: NavLink[] = [
-  { label: "Instagram", href: "#" },
   { label: "Kontakt", href: "/#kontakt" },
-  { label: "Obchodné podmienky", href: "#" },
-  { label: "Ochrana osobných údajov", href: "#" },
-  { label: "Cookies", href: "#" },
+  ...(socialLinks.instagram
+    ? [{ label: "Instagram", href: socialLinks.instagram, external: true }]
+    : []),
+  ...(socialLinks.facebook
+    ? [{ label: "Facebook", href: socialLinks.facebook, external: true }]
+    : []),
+  ...legalNavLinks,
 ];

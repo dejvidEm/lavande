@@ -32,6 +32,8 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Kotvy nesmú skončiť pod sticky headerom. */
+    scroll-padding-top: 6rem;
   }
 
   @media (prefers-reduced-motion: reduce) {

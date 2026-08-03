@@ -28,7 +28,7 @@ export function AboutSection() {
               highlight="ponáhľať"
               description="Lavande Studio vzniklo ako pokojný priestor pre ženy, ktoré chcú budovať silu vedome, bezpečne a s rešpektom k vlastnému telu. Každú lekciu vedieme s dôrazom na techniku, dych a pocit, s ktorým zo štúdia odchádzaš."
             />
-            <Button href="/#o-nas" variant="outline" className="mt-8">
+            <Button href="/#lektorky" variant="outline" className="mt-8">
               Spoznaj Lavande
             </Button>
           </motion.div>
