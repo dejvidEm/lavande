@@ -52,7 +52,7 @@ export function AboutSection() {
               />
             </div>
 
-            <div className="absolute right-3 top-4 max-w-[240px] rounded-[20px] border border-white/10 bg-dark/80 p-4 text-white backdrop-blur-sm sm:right-6 sm:top-6 sm:p-5">
+            <div className="absolute right-3 top-4 max-w-[240px] rounded-[20px] border border-white/20 bg-dark/88 p-4 text-white backdrop-blur-md sm:right-6 sm:top-6 sm:p-5">
               <div className="mb-3 flex items-center gap-3">
                 <div className="relative h-10 w-10 overflow-hidden rounded-full">
                   <Image
@@ -73,19 +73,6 @@ export function AboutSection() {
                 „Po lekcii sa cítim silnejšia, ale zároveň pokojnejšia. Presne
                 taký pohyb som dlho hľadala.”
               </p>
-            </div>
-
-            <div className="absolute bottom-4 left-3 sm:bottom-6 sm:left-6">
-              <div
-                className="absolute -left-3 -top-3 h-16 w-16 rounded-full border border-lavender/20"
-                aria-hidden="true"
-              />
-              <div className="relative rounded-[20px] border border-border bg-white/95 px-5 py-4 backdrop-blur-sm">
-                <p className="text-3xl font-medium tracking-[-0.03em] text-text-primary">
-                  5+
-                </p>
-                <p className="text-sm text-text-muted">rokov skúseností</p>
-              </div>
             </div>
           </motion.div>
         </div>

@@ -9,6 +9,7 @@ type OffsetCardProps = {
   offsetClassName?: string;
   hover?: boolean;
   shadow?: boolean;
+  fullHeight?: boolean;
 };
 
 export function OffsetCard({
@@ -17,9 +18,10 @@ export function OffsetCard({
   offsetClassName,
   hover = true,
   shadow = true,
+  fullHeight = false,
 }: OffsetCardProps) {
   return (
-    <div className="group relative">
+    <div className={cn("group relative", fullHeight && "h-full")}>
       {shadow && (
         <div
           className={cn(

@@ -19,12 +19,12 @@ export function ServicesSection() {
           eyebrow="NAŠE LEKCIE"
               title="Pohyb prispôsobený tvojmu telu."
               highlight="telu"
-          description="Od prvého stretnutia až po pravidelný tréning. Vyber si formu lekcie, pri ktorej sa budeš cítiť prirodzene a bezpečne."
+          description="Tri úrovne Reformer Pilates — od prvej hodiny až po mierne pokročilú prax v komornom štúdiu."
           className="mb-12 md:mb-16"
         />
 
         <motion.div
-          className="grid gap-8 sm:grid-cols-2 xl:grid-cols-4"
+          className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -33,25 +33,31 @@ export function ServicesSection() {
           {services.map((service) => {
             const Icon = service.icon;
             return (
-              <motion.div key={service.id} variants={fadeUp} transition={defaultTransition}>
+              <motion.div
+                key={service.id}
+                variants={fadeUp}
+                transition={defaultTransition}
+                className="h-full"
+              >
                 <OffsetCard
+                  fullHeight
                   shadow={false}
-                  className="relative flex flex-col overflow-hidden p-6 sm:p-7"
+                  className="relative flex h-full flex-col overflow-hidden p-6 sm:p-7"
                 >
                   <LavenderBranch
                     className="pointer-events-none absolute -right-10 -top-6 h-[21rem] w-48 text-lavender-soft sm:-right-12 sm:-top-8 sm:h-[24rem] sm:w-52"
                     opacity={0.14}
                   />
 
-                  <div className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full bg-lavender-pale text-lavender transition-transform duration-premium group-hover:rotate-2">
+                  <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-lavender-pale text-lavender transition-transform duration-premium group-hover:rotate-2">
                     <Icon className="h-5 w-5" strokeWidth={1.75} />
                   </div>
 
-                  <div className="relative z-10 mt-6">
-                    <h3 className="text-xl font-medium tracking-[-0.02em] text-text-primary">
+                  <div className="relative z-10 mt-6 flex flex-1 flex-col">
+                    <h3 className="line-clamp-2 min-h-[3.25rem] text-xl font-medium tracking-[-0.02em] text-text-primary">
                       {service.title}
                     </h3>
-                    <p className="mt-2.5 text-[15px] leading-relaxed text-text-secondary">
+                    <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-text-secondary">
                       {service.description}
                     </p>
                     <Link

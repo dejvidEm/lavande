@@ -2,6 +2,7 @@ export type PricingPlan = {
   id: string;
   name: string;
   price: string;
+  promo?: string;
   description: string;
   features: string[];
   recommended?: boolean;
@@ -12,7 +13,8 @@ export const pricingPlans: PricingPlan[] = [
   {
     id: "single",
     name: "Jednorazová lekcia",
-    price: "XX €",
+    price: "17 €",
+    promo: "Prvá úvodná lekcia za 15 €",
     description: "Ideálne na prvé stretnutie so štúdiom.",
     features: [
       "55 minút vedenej lekcie",
@@ -25,7 +27,7 @@ export const pricingPlans: PricingPlan[] = [
   {
     id: "pack-5",
     name: "Balík 5 lekcií",
-    price: "XX €",
+    price: "80 €",
     description: "Pre pravidelný tréning niekoľkokrát mesačne.",
     features: [
       "5 lekcií podľa výberu",
@@ -40,7 +42,7 @@ export const pricingPlans: PricingPlan[] = [
   {
     id: "pack-10",
     name: "Balík 10 lekcií",
-    price: "XX €",
+    price: "150 €",
     description: "Najlepšia hodnota pre dlhodobú prax.",
     features: [
       "10 lekcií podľa výberu",

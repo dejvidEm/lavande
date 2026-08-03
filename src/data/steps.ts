@@ -9,7 +9,7 @@ export const steps: Step[] = [
     number: "01",
     title: "Vyber si lekciu",
     description:
-      "Pozri si rozvrh a vyber formu, ktorá ti najviac vyhovuje.",
+      "Pozri si tri úrovne Reformer Pilates a vyber si tú, ktorá zodpovedá tvojej praxi.",
   },
   {
     number: "02",

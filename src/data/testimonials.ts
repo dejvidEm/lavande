@@ -24,7 +24,7 @@ export const testimonials: Testimonial[] = [
     quote:
       "Komorné skupiny robia obrovský rozdiel. Lektorka vidí každý detail a ja sa cítim bezpečne aj ako začiatočníčka.",
     name: "Jana M.",
-    label: "Mat Pilates",
+    label: "Reformer Začiatočníci",
     avatar: siteImages.testimonials.jana,
     avatarAlt: "Portrét klientky Jany.",
   },
@@ -33,7 +33,7 @@ export const testimonials: Testimonial[] = [
     quote:
       "Po lekcii sa cítim silnejšia, ale zároveň pokojnejšia. Presne taký pohyb som dlho hľadala.",
     name: "Katarína P.",
-    label: "Individuálna lekcia",
+    label: "Prvá hodina na reformeri",
     avatar: siteImages.testimonials.katarina,
     avatarAlt: "Portrét klientky Kataríny.",
   },
@@ -42,7 +42,7 @@ export const testimonials: Testimonial[] = [
     quote:
       "Atmosféra štúdia je presne taká, akú som chcela — jemná, profesionálna a bez tlaku na výkon.",
     name: "Eva S.",
-    label: "Pilates pre začiatočníčky",
+    label: "Prvá hodina na reformeri",
     avatar: siteImages.testimonials.jana,
     avatarAlt: "Portrét klientky Evy.",
   },

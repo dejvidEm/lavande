@@ -26,9 +26,9 @@ export const leadInstructor: InstructorProfile = {
   imageAlt: "Lektorka Alexandra pri cvičení Reformer Pilates v štúdiu Lavande.",
   objectPosition: "center 25%",
   courses: [
-    { id: "reformer", label: "Reformer Pilates" },
-    { id: "mat", label: "Mat Pilates" },
-    { id: "private", label: "Individuálne lekcie" },
+    { id: "first-hour", label: "Prvá hodina na reformeri" },
+    { id: "beginner", label: "Reformer Začiatočníci" },
+    { id: "intermediate", label: "Reformer Mierne pokročilí" },
   ],
   highlights: [
     "Individuálne prispôsobenie tempa lekcie",

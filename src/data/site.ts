@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Lavande Studio",
   title: "Lavande Studio | Pilates štúdio",
   description:
-    "Boutique Pilates štúdio pre vedomý pohyb, zdravé držanie tela, silu a pokoj. Reformer Pilates, skupinové a individuálne lekcie.",
+    "Boutique Pilates štúdio pre vedomý pohyb, zdravé držanie tela, silu a pokoj. Tri úrovne Reformer Pilates v komornom prostredí.",
   bookingUrl: "/#kontakt",
   scheduleUrl: "/#lekcie",
   email: "studio@lavande.sk",
@@ -46,7 +46,7 @@ export const siteImages = {
 } as const;
 
 export const heroStats = [
-  { value: "150+", label: "spokojných klientok" },
-  { value: "8", label: "typov lekcií" },
+  { value: "10+", label: "spokojných klientok" },
+  { value: "3", label: "úrovne Reformer Pilates" },
   { value: "4.9", label: "priemerné hodnotenie" },
 ] as const;

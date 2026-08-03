@@ -9,19 +9,19 @@ export const faqItems: FAQItem[] = [
     id: "experience",
     question: "Potrebujem mať skúsenosti s Pilates?",
     answer:
-      "Nie. Ponúkame lekcie pre začiatočníčky aj pokročilejšie klientky. Lektorka vždy prispôsobí tempo a náročnosť tvojej aktuálnej kondícii.",
+      "Nie. Začína sa prvá hodina na reformeri, potom môžeš pokračovať na Reformer Začiatočníci a neskôr na Reformer Mierne pokročilí. Lektorka vždy prispôsobí tempo tvojej úrovni.",
   },
   {
     id: "bring",
     question: "Čo si mám priniesť na prvú lekciu?",
     answer:
-      "Odporúčame pohodlné oblečenie, ponožky s protišmykovou podrážkou a malú fľašu vody. Ostatné vybavenie zabezpečíme v štúdiu.",
+      "Stačí pohodlné oblečenie, v ktorom sa ti bude dobre pohybovať. Ponožky s protišmykovou podrážkou môžeš mať, ale nemusíš — netreba si kvôli lekcii nič špeciálne dokupovať. Ostatné vybavenie zabezpečíme v štúdiu.",
   },
   {
     id: "reformer-beginner",
     question: "Je Reformer Pilates vhodný aj pre začiatočníčky?",
     answer:
-      "Áno. Reformer umožňuje bezpečný a kontrolovaný pohyb. Začiatočníčky odporúčame začať úvodnou lekciou alebo individuálnym stretnutím.",
+      "Áno. Začni prvou hodinou na reformeri, kde sa naučíš techniku a prácu so strojom. Potom môžeš pokračovať na Reformer Začiatočníci a ďalej podľa svojho pokroku.",
   },
   {
     id: "arrival",

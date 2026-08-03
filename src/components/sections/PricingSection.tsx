@@ -41,6 +41,11 @@ export function PricingSection() {
                 <p className="mt-6 text-4xl font-medium tracking-[-0.03em] text-text-primary">
                   {plan.price}
                 </p>
+                {plan.promo && (
+                  <p className="mt-2 inline-flex rounded-pill bg-lavender-pale px-3 py-1 text-sm font-medium text-lavender">
+                    {plan.promo}
+                  </p>
+                )}
 
                 <ul className="mt-6 space-y-3 border-t border-border pt-6">
                   {plan.features.map((feature) => (
@@ -65,10 +70,6 @@ export function PricingSection() {
             </motion.div>
           ))}
         </motion.div>
-
-        <p className="mt-8 text-center text-sm text-text-muted">
-          Presný cenník a podmienky rezervácie si môžeš upraviť v dátovom súbore.
-        </p>
       </Container>
     </MotionSection>
   );
