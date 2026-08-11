@@ -198,7 +198,7 @@ export function LessonPageTemplate({
             <div className="relative max-w-2xl">
               <Eyebrow className="mb-4 text-lavender-medium">PRIPRAVENÁ ZAČAŤ?</Eyebrow>
               <h2 className="text-balance text-[1.75rem] font-medium leading-[1.1] tracking-[-0.035em] sm:text-[2.25rem]">
-                Rezervuj si {lesson.title.toLowerCase()} vo{" "}
+                Rezervuj si {lesson.ctaTitle} v{" "}
                 <span className="text-lavender">Lavande</span>.
               </h2>
               <p className="mt-4 text-base leading-relaxed text-text-secondary sm:text-lg">

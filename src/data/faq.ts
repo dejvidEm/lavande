@@ -9,7 +9,7 @@ export const faqItems: FAQItem[] = [
     id: "experience",
     question: "Potrebujem mať skúsenosti s Pilates?",
     answer:
-      "Nie. Začína sa prvá hodina na reformeri, potom môžeš pokračovať na Reformer Začiatočníci a neskôr na Reformer Mierne pokročilí. Lektorka vždy prispôsobí tempo tvojej úrovni.",
+      "Nie. Naše lekcie sú rozdelené podľa úrovne, takže si môžeš vybrať tú, ktorá je pre teba vhodná. Ak prichádzaš na Reformer Pilates prvýkrát, rezervuj si lekciu Reformer začiatočníci a príď prosím 20 minút pred začiatkom, aby sme ťa oboznámili so strojom.",
   },
   {
     id: "bring",
@@ -21,13 +21,13 @@ export const faqItems: FAQItem[] = [
     id: "reformer-beginner",
     question: "Je Reformer Pilates vhodný aj pre začiatočníčky?",
     answer:
-      "Áno. Začni prvou hodinou na reformeri, kde sa naučíš techniku a prácu so strojom. Potom môžeš pokračovať na Reformer Začiatočníci a ďalej podľa svojho pokroku.",
+      "Áno. Reformer Pilates je vhodný aj pre úplné začiatočníčky. V našom štúdiu začína každá nová klientka na lekcii Reformer začiatočníci, kde sa naučí správnu techniku, dýchanie a prácu so strojom.",
   },
   {
     id: "arrival",
     question: "Ako skoro mám prísť pred lekciou?",
     answer:
-      "Prosíme, príď 10–15 minút pred začiatkom, aby si sa stihla pripraviť a lektorka mala priestor na krátku konzultáciu.",
+      "Ak prichádzaš na Reformer Pilates prvýkrát, prosíme, príď 20 minút pred začiatkom lekcie. Ukážeme ti stroj, jeho nastavenie a vysvetlíme základné princípy cvičenia, aby si sa počas hodiny cítila komfortne. Ak už si u nás absolvovala úvodnú lekciu, stačí prísť približne 10 minút pred začiatkom, aby si mala dostatok času pripraviť sa na cvičenie.",
   },
   {
     id: "cancel",

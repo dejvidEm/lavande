@@ -17,9 +17,9 @@ export function ServicesSection() {
       <Container>
         <SectionHeading
           eyebrow="NAŠE LEKCIE"
-              title="Pohyb prispôsobený tvojmu telu."
-              highlight="telu"
-          description="Tri úrovne Reformer Pilates — od prvej hodiny až po mierne pokročilú prax v komornom štúdiu."
+          title="Pohyb prispôsobený tvojmu telu."
+          highlight="telu"
+          description="Od prvých krokov na reformeri až po pokročilé lekcie – každá hodina má svoj cieľ."
           className="mb-12 md:mb-16"
         />
 

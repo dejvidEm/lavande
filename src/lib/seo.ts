@@ -99,7 +99,7 @@ export function buildLessonSchema(lesson: LessonPage) {
     offers: {
       "@type": "Offer",
       priceCurrency: "EUR",
-      price: "17",
+      price: String(lesson.price),
       availability: "https://schema.org/InStock",
       url: absoluteUrl("/#cennik"),
     },

@@ -65,14 +65,15 @@ export const termsDocument: LegalDocument = {
       blocks: [
         {
           type: "paragraph",
-          text: "Štúdio poskytuje skupinové lekcie Reformer Pilates v troch úrovniach — Prvá hodina na reformeri, Reformer Začiatočníci a Reformer Mierne pokročilí.",
+          text: "Štúdio poskytuje skupinové lekcie Reformer Pilates v troch úrovniach — Reformer začiatočníci, Reformer mierne pokročilí a Reformer pokročilí.",
         },
         {
           type: "list",
           items: [
-            "Štandardná dĺžka lekcie je 55 minút.",
+            "Štandardná dĺžka lekcie je 50 minút.",
             "Kapacita skupinovej lekcie je maximálne 4 osoby.",
-            "Úplným začiatočníčkam odporúčame začať lekciou Prvá hodina na reformeri.",
+            "Úplným začiatočníkom odporúčame začať lekciou Reformer začiatočníci.",
+            "Pri prvej návšteve je potrebné prísť o 20 minút skôr kvôli úvodu a oboznámeniu so strojom.",
           ],
         },
       ],
@@ -89,7 +90,7 @@ export const termsDocument: LegalDocument = {
           type: "list",
           items: [
             "Miesto na lekcii je rezervované až po potvrdení termínu štúdiom.",
-            "Na lekciu odporúčame prísť 10–15 minút pred jej začiatkom.",
+            "Na lekciu odporúčame prísť približne 10 minút pred jej začiatkom.",
             "Pri meškaní nad 10 minút nemusí byť z bezpečnostných dôvodov možné zapojiť sa do prebiehajúcej lekcie.",
           ],
         },
@@ -107,7 +108,6 @@ export const termsDocument: LegalDocument = {
           type: "list",
           items: [
             "Jednorazová lekcia: 17 €.",
-            "Prvá úvodná lekcia v zvýhodnenej cene 15 € platí pre nové klientky jedenkrát.",
             "Balík 5 lekcií: 80 € s platnosťou 3 mesiace od zakúpenia.",
             "Balík 10 lekcií: 150 € s platnosťou 6 mesiacov od zakúpenia.",
           ],

@@ -4,14 +4,11 @@
  */
 const BASE = process.env.AUDIT_BASE ?? "http://127.0.0.1:4321";
 
-const pages = [
-  "/",
-  "/lekcie/prva-hodina-na-reformeri",
-  "/lekcie/reformer-zaciatocnici",
-  "/lekcie/reformer-mierne-pokrocili",
-  "/obchodne-podmienky",
-  "/ochrana-osobnych-udajov",
-];
+// Zoznam stránok sa berie zo sitemap.xml, aby sa audit nikdy nerozišiel s webom.
+const sitemap = await (await fetch(`${BASE}/sitemap.xml`)).text();
+const pages = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+  (match) => new URL(match[1]).pathname
+);
 
 const problems = [];
 const note = (page, msg) => problems.push(`${page} — ${msg}`);

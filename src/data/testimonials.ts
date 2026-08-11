@@ -24,7 +24,7 @@ export const testimonials: Testimonial[] = [
     quote:
       "Komorné skupiny robia obrovský rozdiel. Lektorka vidí každý detail a ja sa cítim bezpečne aj ako začiatočníčka.",
     name: "Jana M.",
-    label: "Reformer Začiatočníci",
+    label: "Reformer začiatočníci",
     avatar: siteImages.testimonials.jana,
     avatarAlt: "Portrét klientky Jany.",
   },
@@ -33,7 +33,7 @@ export const testimonials: Testimonial[] = [
     quote:
       "Po lekcii sa cítim silnejšia, ale zároveň pokojnejšia. Presne taký pohyb som dlho hľadala.",
     name: "Katarína P.",
-    label: "Prvá hodina na reformeri",
+    label: "Reformer mierne pokročilí",
     avatar: siteImages.testimonials.katarina,
     avatarAlt: "Portrét klientky Kataríny.",
   },
@@ -42,7 +42,7 @@ export const testimonials: Testimonial[] = [
     quote:
       "Atmosféra štúdia je presne taká, akú som chcela — jemná, profesionálna a bez tlaku na výkon.",
     name: "Eva S.",
-    label: "Prvá hodina na reformeri",
+    label: "Reformer začiatočníci",
     avatar: siteImages.testimonials.jana,
     avatarAlt: "Portrét klientky Evy.",
   },

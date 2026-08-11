@@ -57,8 +57,10 @@ export const siteImages = {
   hero: "/images/lavande/hero.png",
   studio: "/images/lavande/studio.png",
   services: {
-    reformer: "/images/lavande/reformer-pilates.png",
     beginner: "/images/lavande/beginner.png",
+    intermediate: "/images/lavande/reformer-pilates.png",
+    advanced: "/images/lavande/mat-pilates.png",
+    individual: "/images/lavande/instructor-1.png",
   },
   benefits: {
     individual: "/images/lavande/reformer-pilates.png",

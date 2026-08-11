@@ -5,7 +5,10 @@
  */
 const BASE = process.env.AUDIT_BASE ?? "http://127.0.0.1:4322";
 
-const pages = ["/", "/lekcie/reformer-zaciatocnici", "/obchodne-podmienky"];
+const sitemap = await (await fetch(`${BASE}/sitemap.xml`)).text();
+const pages = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(
+  (match) => new URL(match[1]).pathname
+);
 const devices = [
   { name: "mobil  390px @3x", viewport: 390, dpr: 3 },
   { name: "desktop 1440px @2x", viewport: 1440, dpr: 2 },
