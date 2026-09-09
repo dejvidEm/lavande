@@ -29,6 +29,24 @@ export const individualPlan = {
   secondaryCta: "Zistiť viac",
 } as const;
 
+/** Darčeková poukážka — samostatná karta pod balíkmi. */
+export const giftVoucher = {
+  badge: "Darček",
+  name: "Darčeková poukážka",
+  price: "od 17 €",
+  priceNote: "podľa zvolenej lekcie alebo balíka",
+  description:
+    "Daruj blízkej osobe pohyb, pri ktorom si oddýchne a spraví niečo pre svoje telo.",
+  features: [
+    "Platí na ktorúkoľvek lekciu alebo balík",
+    "Hodnotu poukážky si vyberieš sama",
+    "Vhodná aj pre úplné začiatočníčky",
+    "Termín si obdarovaná zvolí sama",
+  ],
+  note: "Napíš nám a poukážku pre teba pripravíme.",
+  cta: "Objednať poukážku",
+} as const;
+
 export const pricingPlans: PricingPlan[] = [
   {
     id: "single",

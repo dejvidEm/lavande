@@ -1,11 +1,12 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/components/layout/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MotionSection } from "@/components/ui/MotionSection";
+import { StudioImage } from "@/components/ui/StudioImage";
 import { benefits } from "@/data/benefits";
+import { imageSizes } from "@/lib/images";
 import { fadeUp, staggerContainer, defaultTransition } from "@/lib/motion";
 
 export function BenefitsSection() {
@@ -34,16 +35,12 @@ export function BenefitsSection() {
               className="group relative overflow-hidden rounded-card-sm"
             >
               <div className="relative aspect-[4/5] w-full sm:aspect-[3/4]">
-                <Image
+                <StudioImage
                   src={benefit.image}
                   alt={benefit.imageAlt}
-                  fill
-                  // Dekoratívne dlaždice sa zobrazujú max. na štvrtine šírky,
-                  // nižšia kvalita tu nie je viditeľná.
-                  quality={65}
-                  className="object-cover transition duration-500 group-hover:scale-[1.02]"
-                  style={{ objectPosition: benefit.objectPosition }}
-                  sizes="(max-width: 640px) 50vw, (max-width: 1280px) 50vw, 25vw"
+                  className="transition duration-500 group-hover:scale-[1.02]"
+                  objectPosition={benefit.objectPosition}
+                  sizes={imageSizes.benefit}
                 />
               </div>
               <div className="absolute inset-x-2 bottom-2 rounded-[16px] border border-white/40 bg-white/90 p-3 backdrop-blur-[2px] sm:inset-x-4 sm:bottom-4 sm:rounded-[20px] sm:p-6">

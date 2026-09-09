@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight, Check, Clock, Users } from "lucide-react";
 import { motion } from "framer-motion";
@@ -11,8 +10,10 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { HighlightedText } from "@/components/ui/HighlightedText";
 import { OffsetCard } from "@/components/ui/OffsetCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { StudioImage } from "@/components/ui/StudioImage";
 import type { LessonPage } from "@/data/lesson-pages";
 import { siteConfig } from "@/data/site";
+import { imageSizes } from "@/lib/images";
 import { fadeUp, defaultTransition } from "@/lib/motion";
 
 type LessonPageTemplateProps = {
@@ -87,14 +88,12 @@ export function LessonPageTemplate({
               className="relative overflow-hidden rounded-card"
             >
               <div className="relative aspect-[4/3] sm:aspect-[5/4] lg:min-h-[420px]">
-                <Image
+                <StudioImage
                   src={lesson.image}
                   alt={lesson.imageAlt}
-                  fill
                   priority
-                  className="object-cover"
-                  style={{ objectPosition: lesson.objectPosition }}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  objectPosition={lesson.objectPosition}
+                  sizes={imageSizes.split}
                 />
               </div>
             </motion.div>
@@ -169,11 +168,7 @@ export function LessonPageTemplate({
           />
           <div className="grid gap-6 sm:grid-cols-2">
             {lesson.benefits.map((benefit, index) => (
-              <OffsetCard
-                key={benefit}
-                offsetClassName={index % 2 === 1 ? "bg-lavender-soft/70" : undefined}
-                className="p-6 sm:p-7"
-              >
+              <OffsetCard key={benefit} className="p-6 sm:p-7">
                 <div className="flex items-start gap-3">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-lavender-pale text-sm font-medium text-lavender">
                     {index + 1}

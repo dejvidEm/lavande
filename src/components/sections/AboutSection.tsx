@@ -1,12 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MotionSection } from "@/components/ui/MotionSection";
+import { AvatarImage } from "@/components/ui/AvatarImage";
+import { StudioImage } from "@/components/ui/StudioImage";
 import { siteImages } from "@/data/site";
+import { imageSizes } from "@/lib/images";
 import { fadeUp, defaultTransition } from "@/lib/motion";
 
 export function AboutSection() {
@@ -42,26 +44,25 @@ export function AboutSection() {
             className="relative"
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-card sm:aspect-[5/6] lg:min-h-[560px]">
-              <Image
+              <StudioImage
                 src={siteImages.about.main}
-                alt="Inštruktorka cvičí Reformer Pilates v minimalistickom štúdiu Lavande."
-                fill
-                className="object-cover"
-                style={{ objectPosition: "center 25%" }}
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                alt="Dve klientky cvičia spolu na reformeroch v štúdiu Lavande."
+                objectPosition="center 45%"
+                sizes={imageSizes.split}
+              />
+              <div
+                className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(to_bottom_left,rgba(38,37,38,0.58)_0%,rgba(38,37,38,0.22)_34%,transparent_62%)]"
+                aria-hidden="true"
               />
             </div>
 
-            <div className="absolute right-3 top-4 max-w-[240px] rounded-[20px] border border-white/20 bg-dark/88 p-4 text-white backdrop-blur-md sm:right-6 sm:top-6 sm:p-5">
+            <div className="absolute right-3 top-4 z-[2] max-w-[240px] rounded-[20px] border border-white/20 bg-dark/88 p-4 text-white backdrop-blur-md sm:right-6 sm:top-6 sm:p-5">
               <div className="mb-3 flex items-center gap-3">
                 <div className="relative h-10 w-10 overflow-hidden rounded-full">
-                  <Image
+                  <AvatarImage
                     src={siteImages.about.avatar}
-                    alt="Portrét klientky"
-                    fill
-                    className="object-cover"
-                    style={{ objectPosition: "center 30%" }}
-                    sizes="40px"
+                    alt="Klientka pri cvičení v štúdiu Lavande"
+                    className="object-cover object-[center_40%]"
                   />
                 </div>
                 <div>

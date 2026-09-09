@@ -51,34 +51,31 @@ export const businessInfo = {
 
 export const siteImages = {
   logo: "/brand/lavande-studio-logo.png",
-  // Zmenšený zdroj: wordmark sa nikde nezobrazuje vyššie ako 56 px.
   logoNav: "/brand/lavande-studio-logo-nav-small.png",
-  heroBackground: "/images/lavande/hero-background.jpg",
-  hero: "/images/lavande/hero.png",
-  studio: "/images/lavande/studio.png",
+  heroBackground: "/images/lavande/lavande-studio-reformer-hero.jpg",
   services: {
-    beginner: "/images/lavande/beginner.png",
-    intermediate: "/images/lavande/reformer-pilates.png",
-    advanced: "/images/lavande/mat-pilates.png",
-    individual: "/images/lavande/instructor-1.png",
+    beginner: "/images/lavande/lesson-beginner.jpg",
+    intermediate: "/images/lavande/lesson-intermediate.jpg",
+    advanced: "/images/lavande/lesson-advanced.jpg",
+    individual: "/images/lavande/lesson-individual.jpg",
   },
   benefits: {
-    individual: "/images/lavande/reformer-pilates.png",
-    groups: "/images/lavande/hero.png",
-    strength: "/images/lavande/mat-pilates.png",
-    environment: "/images/lavande/studio.png",
+    individual: "/images/lavande/benefit-individual.jpg",
+    groups: "/images/lavande/benefit-groups.jpg",
+    strength: "/images/lavande/benefit-strength.jpg",
+    environment: "/images/lavande/benefit-environment.jpg",
   },
   about: {
-    main: "/images/lavande/reformer-pilates.png",
-    avatar: "/images/lavande/beginner.png",
+    main: "/images/lavande/about-main.jpg",
+    avatar: "/images/lavande/about-avatar.jpg",
   },
   instructors: {
-    alexandra: "/images/lavande/instructor-1.png",
+    alexandra: "/images/lavande/instructor-alexandra.jpg",
   },
   testimonials: {
-    martina: "/images/lavande/testimonial-1.png",
-    jana: "/images/lavande/testimonial-2.png",
-    katarina: "/images/lavande/testimonial-3.png",
+    martina: "/images/lavande/testimonial-1.jpg",
+    jana: "/images/lavande/testimonial-2.jpg",
+    katarina: "/images/lavande/testimonial-3.jpg",
   },
 } as const;
 

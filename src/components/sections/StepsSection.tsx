@@ -41,7 +41,6 @@ export function StepsSection() {
             {steps.map((step) => (
               <motion.div key={step.number} variants={fadeUp} transition={defaultTransition}>
                 <OffsetCard
-                  shadow={false}
                   className="relative min-h-[210px] overflow-hidden bg-beige-light p-6 sm:min-h-[220px] sm:p-7"
                 >
                   <LavenderBranch

@@ -23,7 +23,7 @@ export const services: Service[] = [
     image: siteImages.services.beginner,
     imageAlt: "Klientka pri cvičení na lekcii Reformer začiatočníci v štúdiu Lavande.",
     icon: Sparkles,
-    objectPosition: "center 25%",
+    objectPosition: "center 40%",
   },
   {
     id: "intermediate",
@@ -32,9 +32,9 @@ export const services: Service[] = [
     description:
       "Pre klientov, ktorí už ovládajú základy techniky a chcú rozvíjať silu, stabilitu a plynulosť pohybu.",
     image: siteImages.services.intermediate,
-    imageAlt: "Inštruktorka vedie klientku pri cvičení na reformeri v štúdiu Lavande.",
+    imageAlt: "Klientka pri bočnom strečinge na reformeri v štúdiu Lavande.",
     icon: Layers,
-    objectPosition: "center 30%",
+    objectPosition: "center 45%",
   },
   {
     id: "advanced",
@@ -43,8 +43,8 @@ export const services: Service[] = [
     description:
       "Dynamickejšie a náročnejšie lekcie určené pre tých, ktorí majú pevné základy a chcú posunúť svoju prax na vyššiu úroveň.",
     image: siteImages.services.advanced,
-    imageAlt: "Klientka v dynamickom Pilates pohybe počas pokročilej lekcie.",
+    imageAlt: "Klientka pri náročnejšom cviku na reformeri v štúdiu Lavande.",
     icon: TrendingUp,
-    objectPosition: "center 35%",
+    objectPosition: "center 50%",
   },
 ];

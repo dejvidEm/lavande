@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { Check } from "lucide-react";
 import { motion } from "framer-motion";
 import { LavenderBranch } from "@/components/brand/LavenderBranch";
@@ -9,8 +8,10 @@ import { Button } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { HighlightedText } from "@/components/ui/HighlightedText";
 import { MotionSection } from "@/components/ui/MotionSection";
+import { StudioImage } from "@/components/ui/StudioImage";
 import { leadInstructor } from "@/data/instructors";
 import { siteConfig } from "@/data/site";
+import { imageSizes } from "@/lib/images";
 import { fadeUp, defaultTransition } from "@/lib/motion";
 
 export function InstructorsSection() {
@@ -30,17 +31,19 @@ export function InstructorsSection() {
             className="relative order-2 lg:order-1"
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-card sm:aspect-[5/6] lg:min-h-[490px]">
-              <Image
+              <StudioImage
                 src={instructor.image}
                 alt={instructor.imageAlt}
-                fill
-                className="object-cover"
-                style={{ objectPosition: instructor.objectPosition }}
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                objectPosition={instructor.objectPosition}
+                sizes={imageSizes.split}
+              />
+              <div
+                className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(to_bottom_right,rgba(38,37,38,0.58)_0%,rgba(38,37,38,0.22)_34%,transparent_62%)]"
+                aria-hidden="true"
               />
             </div>
 
-            <div className="absolute left-4 top-4 flex flex-wrap gap-2.5 sm:left-6 sm:top-6 sm:gap-3">
+            <div className="absolute left-4 top-4 z-[2] flex flex-wrap gap-2.5 sm:left-6 sm:top-6 sm:gap-3">
               {instructor.courses.map((course) => (
                 <span
                   key={course.id}

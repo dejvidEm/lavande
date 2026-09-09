@@ -41,7 +41,6 @@ export function ServicesSection() {
               >
                 <OffsetCard
                   fullHeight
-                  shadow={false}
                   className="relative flex h-full flex-col overflow-hidden p-6 sm:p-7"
                 >
                   <LavenderBranch

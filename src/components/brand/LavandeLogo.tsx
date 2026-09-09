@@ -47,7 +47,9 @@ export function LavandeLogo({
       alt={`${siteConfig.name} logo`}
       width={config.width}
       height={config.height}
-      priority={priority}
+      quality={90}
+      preload={priority}
+      loading={priority ? "eager" : "lazy"}
       // Paletové PNG (3,6 kB) je menšie než čokoľvek, čo z neho spraví
       // optimalizátor, takže sa servíruje priamo.
       unoptimized={variant !== "mark"}

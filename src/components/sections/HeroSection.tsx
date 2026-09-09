@@ -1,12 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
 import { LavenderBranch } from "@/components/brand/LavenderBranch";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
+import { StudioImage } from "@/components/ui/StudioImage";
 import { heroStats, siteConfig, siteImages } from "@/data/site";
+import { imageSizes } from "@/lib/images";
 import { fadeUp, defaultTransition } from "@/lib/motion";
 
 export function HeroSection() {
@@ -38,20 +39,18 @@ export function HeroSection() {
           className="relative overflow-hidden rounded-[32px]"
         >
           <div className="relative min-h-[580px] sm:min-h-[620px] lg:min-h-[520px] lg:max-h-[62vh] xl:min-h-[560px] xl:max-h-[64vh]">
-            <Image
+            <StudioImage
               src={siteImages.heroBackground}
-              alt="Žena cvičí jemný strečing v teplom svetle minimalistického Pilates štúdia."
-              fill
+              alt="Klientka cvičí na reformeri v štúdiu Lavande s logom štúdia na stene."
               priority
-              quality={90}
-              className="object-cover object-[center_65%] sm:object-[center_60%]"
-              sizes="100vw"
+              className="object-[38%_center] lg:object-[center_60%]"
+              sizes={imageSizes.hero}
             />
 
             <div className="pointer-events-none absolute inset-0 z-[1]" aria-hidden="true">
-              <div className="absolute inset-x-0 top-0 h-[68%] bg-[linear-gradient(to_bottom,rgba(38,37,38,0.72)_0%,rgba(38,37,38,0.44)_42%,rgba(38,37,38,0.18)_68%,transparent_100%)] sm:hidden" />
-              <div className="absolute inset-x-0 top-0 hidden h-[62%] bg-[linear-gradient(to_bottom,rgba(38,37,38,0.58)_0%,rgba(38,37,38,0.30)_42%,rgba(38,37,38,0.10)_68%,transparent_100%)] sm:block" />
-              <div className="absolute inset-0 bg-gradient-to-r from-dark/45 via-transparent to-transparent sm:from-dark/35" />
+              <div className="absolute inset-x-0 top-0 h-[72%] bg-[linear-gradient(to_bottom,rgba(38,37,38,0.82)_0%,rgba(38,37,38,0.52)_42%,rgba(38,37,38,0.22)_68%,transparent_100%)] sm:hidden" />
+              <div className="absolute inset-x-0 top-0 hidden h-[66%] bg-[linear-gradient(to_bottom,rgba(38,37,38,0.68)_0%,rgba(38,37,38,0.38)_42%,rgba(38,37,38,0.14)_68%,transparent_100%)] sm:block" />
+              <div className="absolute inset-0 bg-gradient-to-r from-dark/50 via-transparent to-transparent sm:from-dark/42" />
               <div className="absolute inset-x-0 bottom-0 h-[28%] bg-gradient-to-t from-dark/25 to-transparent" />
             </div>
 

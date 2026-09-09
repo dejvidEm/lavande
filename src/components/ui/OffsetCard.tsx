@@ -17,7 +17,7 @@ export function OffsetCard({
   className,
   offsetClassName,
   hover = true,
-  shadow = true,
+  shadow = false,
   fullHeight = false,
 }: OffsetCardProps) {
   return (

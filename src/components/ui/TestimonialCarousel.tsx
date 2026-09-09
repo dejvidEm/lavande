@@ -1,9 +1,9 @@
 "use client";
 
 import { useCallback, useEffect, useState } from "react";
-import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AvatarImage } from "@/components/ui/AvatarImage";
 import { cn } from "@/lib/utils";
 import type { Testimonial } from "@/data/testimonials";
 
@@ -55,13 +55,7 @@ export function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) 
             aria-label={`Zobraziť referenciu od ${item.name}`}
             aria-current={index === activeIndex ? "true" : undefined}
           >
-            <Image
-              src={item.avatar}
-              alt=""
-              fill
-              className="object-cover"
-              sizes="44px"
-            />
+            <AvatarImage src={item.avatar} alt="" />
           </button>
         ))}
       </div>
@@ -85,13 +79,7 @@ export function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) 
           >
             <div className="mb-6 flex items-center gap-4">
               <div className="relative h-14 w-14 overflow-hidden rounded-full">
-                <Image
-                  src={active.avatar}
-                  alt={active.avatarAlt}
-                  fill
-                  className="object-cover"
-                  sizes="56px"
-                />
+                <AvatarImage src={active.avatar} alt={active.avatarAlt} />
               </div>
               <div>
                 <p className="text-base font-medium text-text-primary">{active.name}</p>

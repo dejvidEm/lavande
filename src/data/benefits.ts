@@ -16,8 +16,8 @@ export const benefits: Benefit[] = [
     description:
       "Tempo aj náročnosť podľa tvojej kondície a cieľov.",
     image: siteImages.benefits.individual,
-    imageAlt: "Inštruktorka vedie klientku pri cvičení na reformeri.",
-    objectPosition: "center 30%",
+    imageAlt: "Klientka pri individuálnom cvičení na reformeri v štúdiu Lavande.",
+    objectPosition: "center 35%",
   },
   {
     id: "groups",
@@ -25,8 +25,8 @@ export const benefits: Benefit[] = [
     description:
       "Viac pozornosti, bezpečia a vedenia pri každom cviku.",
     image: siteImages.benefits.groups,
-    imageAlt: "Priestor Pilates štúdia s podložkami pripravenými na lekciu.",
-    objectPosition: "center center",
+    imageAlt: "Dve klientky cvičia spolu na reformeroch v komornej skupine.",
+    objectPosition: "center 45%",
   },
   {
     id: "strength",
@@ -34,8 +34,8 @@ export const benefits: Benefit[] = [
     description:
       "Stabilita a mobilita bez zbytočného tlaku na telo.",
     image: siteImages.benefits.strength,
-    imageAlt: "Žena v plynulom Pilates pohybe v bielom oblečení.",
-    objectPosition: "center center",
+    imageAlt: "Klientka pri dynamickejšom cviku s kruhom na reformeri.",
+    objectPosition: "center 40%",
   },
   {
     id: "environment",
@@ -43,7 +43,7 @@ export const benefits: Benefit[] = [
     description:
       "Pokojná atmosféra pre chvíľu, ktorá patrí tebe.",
     image: siteImages.benefits.environment,
-    imageAlt: "Béžová podložka, voda a sukulent na drevenej podlahe v slnečnom štúdiu.",
-    objectPosition: "center 60%",
+    imageAlt: "Pokojné štúdio Lavande s levanduľovým vybavením a reformermi.",
+    objectPosition: "center 40%",
   },
 ];

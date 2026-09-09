@@ -1,13 +1,14 @@
 "use client";
 
-import { Check } from "lucide-react";
+import { Check, Gift } from "lucide-react";
 import { motion } from "framer-motion";
+import { LavenderBranch } from "@/components/brand/LavenderBranch";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { OffsetCard } from "@/components/ui/OffsetCard";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { MotionSection } from "@/components/ui/MotionSection";
-import { individualPlan, pricingPlans } from "@/data/pricing";
+import { giftVoucher, individualPlan, pricingPlans } from "@/data/pricing";
 import { siteConfig } from "@/data/site";
 import { fadeUp, staggerContainer, defaultTransition } from "@/lib/motion";
 
@@ -79,10 +80,7 @@ export function PricingSection() {
           viewport={{ once: true, margin: "-60px" }}
           transition={defaultTransition}
         >
-          <OffsetCard
-            offsetClassName="bg-lavender-soft/60"
-            className="p-7 sm:p-8"
-          >
+          <OffsetCard className="p-7 sm:p-8">
             <div className="grid gap-8 lg:grid-cols-[1.55fr_1fr] lg:items-center lg:gap-12">
               <div>
                 <span className="inline-flex w-fit rounded-pill bg-lavender-pale px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] text-lavender">
@@ -131,6 +129,68 @@ export function PricingSection() {
                     {individualPlan.secondaryCta}
                   </Button>
                 </div>
+              </div>
+            </div>
+          </OffsetCard>
+        </motion.div>
+
+        <motion.div
+          className="mt-6"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          transition={defaultTransition}
+        >
+          <OffsetCard className="relative overflow-hidden bg-gradient-to-br from-lavender-pale via-surface to-beige-light p-7 sm:p-8">
+            <LavenderBranch
+              className="pointer-events-none absolute -bottom-12 -right-6 h-56 w-32 text-lavender"
+              opacity={0.12}
+            />
+
+            <div className="relative grid gap-8 lg:grid-cols-[1.55fr_1fr] lg:items-center lg:gap-12">
+              <div>
+                <span className="inline-flex w-fit items-center gap-2 rounded-pill bg-lavender px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] text-white">
+                  <Gift className="h-3.5 w-3.5" />
+                  {giftVoucher.badge}
+                </span>
+                <h3 className="mt-4 text-xl font-medium tracking-[-0.02em]">
+                  {giftVoucher.name}
+                </h3>
+                <p className="mt-2 text-sm text-text-muted">
+                  {giftVoucher.description}
+                </p>
+
+                <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {giftVoucher.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-3 text-sm leading-relaxed text-text-secondary"
+                    >
+                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-lavender" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="border-t border-border pt-6 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
+                <p className="text-4xl font-medium tracking-[-0.03em] text-text-primary">
+                  {giftVoucher.price}
+                </p>
+                <p className="mt-1 text-sm text-text-muted">
+                  {giftVoucher.priceNote}
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-text-secondary">
+                  {giftVoucher.note}
+                </p>
+
+                <Button
+                  href={`mailto:${siteConfig.email}`}
+                  className="mt-6 w-full"
+                >
+                  {giftVoucher.cta}
+                </Button>
               </div>
             </div>
           </OffsetCard>

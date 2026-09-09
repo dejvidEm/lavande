@@ -17,7 +17,7 @@ export const testimonials: Testimonial[] = [
     name: "Martina K.",
     label: "Reformer Pilates",
     avatar: siteImages.testimonials.martina,
-    avatarAlt: "Portrét klientky Martiny.",
+    avatarAlt: "Klientka pri cvičení v štúdiu Lavande.",
   },
   {
     id: "jana",
@@ -26,7 +26,7 @@ export const testimonials: Testimonial[] = [
     name: "Jana M.",
     label: "Reformer začiatočníci",
     avatar: siteImages.testimonials.jana,
-    avatarAlt: "Portrét klientky Jany.",
+    avatarAlt: "Klientka pri cvičení v štúdiu Lavande.",
   },
   {
     id: "katarina",
@@ -35,7 +35,7 @@ export const testimonials: Testimonial[] = [
     name: "Katarína P.",
     label: "Reformer mierne pokročilí",
     avatar: siteImages.testimonials.katarina,
-    avatarAlt: "Portrét klientky Kataríny.",
+    avatarAlt: "Klientka pri cvičení v štúdiu Lavande.",
   },
   {
     id: "eva",
@@ -44,6 +44,6 @@ export const testimonials: Testimonial[] = [
     name: "Eva S.",
     label: "Reformer začiatočníci",
     avatar: siteImages.testimonials.jana,
-    avatarAlt: "Portrét klientky Evy.",
+    avatarAlt: "Klientka pri cvičení v štúdiu Lavande.",
   },
 ];

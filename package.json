@@ -10,7 +10,9 @@
     "audit:site": "node scripts/audit.mjs",
     "audit:images": "node scripts/measure-images.mjs",
     "audit:quality": "node scripts/compare-quality.mjs",
-    "gen:icons": "node scripts/generate-icons.mjs"
+    "gen:icons": "node scripts/generate-icons.mjs",
+    "gen:photos": "node scripts/process-studio-photos.mjs && node scripts/generate-image-blurs.mjs",
+    "gen:blurs": "node scripts/generate-image-blurs.mjs"
   },
   "dependencies": {
     "autoprefixer": "^10.5.3",
