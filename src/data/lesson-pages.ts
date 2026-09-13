@@ -34,19 +34,19 @@ export const lessonPages: LessonPage[] = [
     intro:
       "Lekcia pre každého, kto začína s Reformer Pilates alebo si chce upevniť správne základy.",
     description:
-      "Na tejto lekcii sa naučíš správnu techniku cvičenia, dýchanie a prácu s reformerom. Postupne budeš budovať silu, stabilitu, mobilitu a koordináciu pohybu v bezpečnom tempe. Ak prichádzaš na Reformer Pilates prvýkrát, prosíme, príď 20 minút pred začiatkom lekcie. Ukážeme ti stroj, vysvetlíme jeho nastavenie a pripravíme ťa na cvičenie. Po absolvovaní úvodnej lekcie stačí prichádzať približne 10 minút pred začiatkom.",
+      "Na tejto lekcii sa naučíš správnu techniku cvičenia, dýchanie a prácu s reformerom. Postupne budeš budovať silu, stabilitu, mobilitu a koordináciu pohybu v bezpečnom tempe. Prosíme, príď približne 10 minút pred začiatkom každej lekcie, aby si mala dostatok času pripraviť sa na cvičenie.",
     image: siteImages.services.beginner,
-    imageAlt: "Klientka pri cvičení na lekcii Reformer začiatočníci v štúdiu Lavande.",
-    objectPosition: "center 40%",
+    imageAlt: "Klientky pri cvičení na reformeroch na lekcii Reformer začiatočníci v štúdiu Lavande.",
+    objectPosition: "center 58%",
     duration: "50 min",
     groupSize: "max. 4 osoby",
     level: "Začiatočníci",
     price: 17,
     metaDescription:
-      "Reformer začiatočníci v Lavande Studio — technika, dýchanie a práca s reformerom v skupine do 4 osôb. Prvýkrát príď 20 minút pred začiatkom lekcie.",
+      "Reformer začiatočníci v Lavande Studio — technika, dýchanie a práca s reformerom v skupine do 4 osôb. Príď približne 10 minút pred začiatkom lekcie.",
     highlights: [
       "Naučíš sa správnu techniku, dýchanie a prácu s reformerom v bezpečnom tempe",
-      "Prvýkrát príď 20 minút pred začiatkom lekcie",
+      "Príď približne 10 minút pred začiatkom každej lekcie",
       "Každá lekcia nadväzuje na predchádzajúcu",
     ],
     benefits: [

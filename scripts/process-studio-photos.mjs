@@ -37,10 +37,10 @@ const src = (file) => path.join(ASSETS, file);
 const jobs = [
   // Lekcie — landscape 4:3
   {
-    out: "lesson-beginner.jpg",
-    from: "IMG_4971-25ce2cc2-a7e7-4af9-ab60-2a598b4e81b8.jpg",
+    out: "lesson-beginner-studio.jpg",
+    from: "IMG_4966_2-7145618a-74ef-44cf-a0ef-344fa8535c8c.jpg",
     w: 960,
-    h: 720,
+    h: 1280,
     pos: "centre",
   },
   {
@@ -74,11 +74,11 @@ const jobs = [
     pos: "top",
   },
   {
-    out: "benefit-groups.jpg",
-    from: "IMG_4966-502ea10a-2eb5-4daf-864b-497cfb5c754b.jpg",
+    out: "benefit-groups-studio.jpg",
+    from: "IMG_5400-3d87c963-da3c-4650-b7ee-1e23f600b7eb.jpg",
     w: 640,
     h: 800,
-    pos: "centre",
+    pos: "south",
   },
   {
     out: "benefit-strength.jpg",

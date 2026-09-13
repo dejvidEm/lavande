@@ -73,7 +73,6 @@ export const termsDocument: LegalDocument = {
             "Štandardná dĺžka lekcie je 50 minút.",
             "Kapacita skupinovej lekcie je maximálne 4 osoby.",
             "Úplným začiatočníkom odporúčame začať lekciou Reformer začiatočníci.",
-            "Pri prvej návšteve je potrebné prísť o 20 minút skôr kvôli úvodu a oboznámeniu so strojom.",
           ],
         },
       ],

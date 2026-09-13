@@ -19,11 +19,11 @@ export const services: Service[] = [
     slug: "reformer-zaciatocnici",
     title: "Reformer začiatočníci",
     description:
-      "Určené pre začiatočníkov aj klientov, ktorí si chcú upevniť základy. Ak prichádzaš na Reformer Pilates prvýkrát, prosíme, príď na svoju prvú lekciu o 20 minút skôr kvôli krátkemu úvodu a oboznámeniu so strojom.",
+      "Určené pre začiatočníkov aj klientov, ktorí si chcú upevniť základy. Prosíme, príď približne 10 minút pred začiatkom každej lekcie.",
     image: siteImages.services.beginner,
-    imageAlt: "Klientka pri cvičení na lekcii Reformer začiatočníci v štúdiu Lavande.",
+    imageAlt: "Klientky pri cvičení na reformeroch na lekcii Reformer začiatočníci v štúdiu Lavande.",
     icon: Sparkles,
-    objectPosition: "center 40%",
+    objectPosition: "center 58%",
   },
   {
     id: "intermediate",

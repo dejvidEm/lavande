@@ -21,7 +21,7 @@ export const leadInstructor: InstructorProfile = {
   id: "alexandra",
   name: "Alexandra",
   role: "Zakladateľka & hlavná lektorka",
-  bio: "Každú lekciu vedem s dôrazom na bezpečnú techniku, dych a pocit istoty v tele. Verím, že sila má byť jemná, vedomá a dlhodobo udržateľná.",
+  bio: "Každú lekciu vediem tak, aby ste sa cítili príjemne, bezpečne a zároveň z nej mali čo najviac. Záleží mi na správnom prevedení cvikov, dýchaní a na tom, aby ste svoje telo postupne spoznávali a posilňovali.",
   image: siteImages.instructors.alexandra,
   imageAlt: "Lektorka Alexandra v štúdiu Lavande.",
   objectPosition: "center 22%",
@@ -31,9 +31,9 @@ export const leadInstructor: InstructorProfile = {
     { id: "advanced", label: "Reformer pokročilí" },
   ],
   highlights: [
-    "Individuálne prispôsobenie tempa lekcie",
-    "Bezpečný prístup pre začiatočníčky aj pokročilejšie",
-    "Dôraz na dych, techniku a dlhodobý pokrok",
-    "Pokojné a podporné vedenie v komornom štúdiu",
+    "Lekciu prispôsobím vašim potrebám a tempu",
+    "Vhodné pre začiatočníčky aj pokročilé",
+    "Zameranie na správnu techniku, dych a kontrolu pohybu",
+    "Individuálny prístup v príjemnom a komornom štúdiu",
   ],
 };

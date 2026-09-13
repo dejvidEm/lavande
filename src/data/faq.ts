@@ -9,7 +9,7 @@ export const faqItems: FAQItem[] = [
     id: "experience",
     question: "Potrebujem mať skúsenosti s Pilates?",
     answer:
-      "Nie. Naše lekcie sú rozdelené podľa úrovne, takže si môžeš vybrať tú, ktorá je pre teba vhodná. Ak prichádzaš na Reformer Pilates prvýkrát, rezervuj si lekciu Reformer začiatočníci a príď prosím 20 minút pred začiatkom, aby sme ťa oboznámili so strojom.",
+      "Nie. Naše lekcie sú rozdelené podľa úrovne, takže si môžeš vybrať tú, ktorá je pre teba vhodná. Ak prichádzaš na Reformer Pilates prvýkrát, rezervuj si lekciu Reformer začiatočníci a príď prosím 10 minút pred začiatkom.",
   },
   {
     id: "bring",
@@ -27,7 +27,7 @@ export const faqItems: FAQItem[] = [
     id: "arrival",
     question: "Ako skoro mám prísť pred lekciou?",
     answer:
-      "Ak prichádzaš na Reformer Pilates prvýkrát, prosíme, príď 20 minút pred začiatkom lekcie. Ukážeme ti stroj, jeho nastavenie a vysvetlíme základné princípy cvičenia, aby si sa počas hodiny cítila komfortne. Ak už si u nás absolvovala úvodnú lekciu, stačí prísť približne 10 minút pred začiatkom, aby si mala dostatok času pripraviť sa na cvičenie.",
+      "Prosíme, príď približne 10 minút pred začiatkom každej lekcie, aby si mala dostatok času pripraviť sa na cvičenie.",
   },
   {
     id: "cancel",

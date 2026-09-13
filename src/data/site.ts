@@ -8,7 +8,7 @@ export const siteConfig = {
   language: "sk",
   bookingUrl: "https://app.zenamu.com/lavande-studio?from=1789336800",
   scheduleUrl: "/#lekcie",
-  email: "studio@lavande.sk",
+  email: "lavandestudio7@gmail.com",
   themeColor: "#897495",
   keywords: [
     "Reformer Pilates",
@@ -54,14 +54,14 @@ export const siteImages = {
   logoNav: "/brand/lavande-studio-logo-nav-small.png",
   heroBackground: "/images/lavande/lavande-studio-reformer-hero.jpg",
   services: {
-    beginner: "/images/lavande/lesson-beginner.jpg",
+    beginner: "/images/lavande/lesson-beginner-studio.jpg",
     intermediate: "/images/lavande/lesson-intermediate.jpg",
     advanced: "/images/lavande/lesson-advanced.jpg",
     individual: "/images/lavande/lesson-individual.jpg",
   },
   benefits: {
     individual: "/images/lavande/benefit-individual.jpg",
-    groups: "/images/lavande/benefit-groups.jpg",
+    groups: "/images/lavande/benefit-groups-studio.jpg",
     strength: "/images/lavande/benefit-strength.jpg",
     environment: "/images/lavande/benefit-environment.jpg",
   },

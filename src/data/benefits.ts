@@ -25,8 +25,8 @@ export const benefits: Benefit[] = [
     description:
       "Viac pozornosti, bezpečia a vedenia pri každom cviku.",
     image: siteImages.benefits.groups,
-    imageAlt: "Dve klientky cvičia spolu na reformeroch v komornej skupine.",
-    objectPosition: "center 45%",
+    imageAlt: "Komorné štúdio Lavande s reformermi pripravenými na skupinovú lekciu.",
+    objectPosition: "center 70%",
   },
   {
     id: "strength",
@@ -44,6 +44,6 @@ export const benefits: Benefit[] = [
       "Pokojná atmosféra pre chvíľu, ktorá patrí tebe.",
     image: siteImages.benefits.environment,
     imageAlt: "Pokojné štúdio Lavande s levanduľovým vybavením a reformermi.",
-    objectPosition: "center 40%",
+    objectPosition: "center 70%",
   },
 ];
