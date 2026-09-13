@@ -34,7 +34,7 @@ export function Footer() {
   };
 
   return (
-    <footer id="kontakt" className="scroll-mt-28 pb-8 pt-section-sm md:pt-section-md">
+    <footer id="kontakt" className="scroll-mt-28 pb-8 pt-0">
       <Container>
         <div className="relative overflow-hidden rounded-card bg-dark-ui px-6 py-10 text-white grain-dark sm:px-10 sm:py-12 lg:px-12 lg:py-14">
           <LavenderBranch

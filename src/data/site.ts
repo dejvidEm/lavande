@@ -7,6 +7,7 @@ export const siteConfig = {
   locale: "sk_SK",
   language: "sk",
   bookingUrl: "https://app.zenamu.com/lavande-studio?from=1789336800",
+  passUrl: "https://app.zenamu.com/lavande-studio/entry-pass",
   scheduleUrl: "/#lekcie",
   email: "lavandestudio7@gmail.com",
   themeColor: "#897495",
@@ -30,6 +31,10 @@ export const socialLinks = {
   facebook: "",
 } as const;
 
+export const instagramHandle = socialLinks.instagram
+  ? socialLinks.instagram.replace(/\/+$/, "").split("/").pop() ?? ""
+  : "";
+
 /**
  * Fakturačné a kontaktné údaje prevádzkovateľa.
  * Používajú sa v právnych dokumentoch a v structured data pre vyhľadávače.
@@ -38,15 +43,31 @@ export const businessInfo = {
   legalName: "Lavande Studio",
   registrationId: "",
   vatId: "",
-  street: "",
-  city: "Bratislava",
-  postalCode: "",
+  street: "Jána Kostru 1",
+  city: "Trebišov",
+  postalCode: "075 01",
   country: "Slovensko",
   countryCode: "SK",
   phone: "",
   supervisoryAuthority:
     "Slovenská obchodná inšpekcia (SOI), Inšpektorát SOI pre Bratislavský kraj",
   dataProtectionAuthority: "Úrad na ochranu osobných údajov Slovenskej republiky",
+} as const;
+
+const studioAddressQuery = [
+  businessInfo.street,
+  businessInfo.postalCode,
+  businessInfo.city,
+]
+  .filter(Boolean)
+  .join(", ");
+
+export const studioLocation = {
+  label: studioAddressQuery,
+  street: businessInfo.street,
+  city: businessInfo.city,
+  embedSrc: `https://maps.google.com/maps?q=${encodeURIComponent(studioAddressQuery)}&hl=sk&z=16&output=embed`,
+  externalUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(studioAddressQuery)}`,
 } as const;
 
 export const siteImages = {

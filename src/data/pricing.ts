@@ -1,3 +1,5 @@
+import { siteConfig } from "./site";
+
 export type PricingPlan = {
   id: string;
   name: string;
@@ -7,6 +9,7 @@ export type PricingPlan = {
   features: string[];
   recommended?: boolean;
   cta: string;
+  href?: string;
 };
 
 /** Individuálna lekcia stojí mimo balíkov — má vlastnú kartu pod cenníkom. */
@@ -75,6 +78,7 @@ export const pricingPlans: PricingPlan[] = [
     ],
     recommended: true,
     cta: "Vybrať balík",
+    href: siteConfig.passUrl,
   },
   {
     id: "pack-10",
@@ -89,5 +93,6 @@ export const pricingPlans: PricingPlan[] = [
       "Najvýhodnejšia cena za lekciu",
     ],
     cta: "Vybrať balík",
+    href: siteConfig.passUrl,
   },
 ];

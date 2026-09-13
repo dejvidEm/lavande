@@ -61,7 +61,7 @@ export function PricingSection() {
                 </ul>
 
                 <Button
-                  href={siteConfig.bookingUrl}
+                  href={plan.href ?? siteConfig.bookingUrl}
                   variant={plan.recommended ? "primary" : "secondary"}
                   className="mt-8 w-full"
                 >

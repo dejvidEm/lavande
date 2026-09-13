@@ -39,6 +39,11 @@ export function buildLocalBusinessSchema() {
     image: absoluteUrl(ogImage.url),
     email: siteConfig.email,
     address,
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      [businessInfo.street, businessInfo.postalCode, businessInfo.city]
+        .filter(Boolean)
+        .join(", ")
+    )}`,
     ...optional("telephone", businessInfo.phone),
     ...(sameAs.length > 0 ? { sameAs } : {}),
     areaServed: businessInfo.city || businessInfo.country,

@@ -2,11 +2,18 @@
 
 import { ChevronDown } from "lucide-react";
 import { motion, useReducedMotion } from "framer-motion";
+import { InstagramIcon } from "@/components/brand/InstagramIcon";
 import { LavenderBranch } from "@/components/brand/LavenderBranch";
 import { Container } from "@/components/layout/Container";
 import { Button } from "@/components/ui/Button";
 import { StudioImage } from "@/components/ui/StudioImage";
-import { heroStats, siteConfig, siteImages } from "@/data/site";
+import {
+  heroStats,
+  instagramHandle,
+  siteConfig,
+  siteImages,
+  socialLinks,
+} from "@/data/site";
 import { imageSizes } from "@/lib/images";
 import { fadeUp, defaultTransition } from "@/lib/motion";
 
@@ -150,6 +157,27 @@ export function HeroSection() {
             ))}
           </div>
         </motion.div>
+
+        {socialLinks.instagram && instagramHandle ? (
+          <motion.a
+            href={socialLinks.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            transition={
+              prefersReducedMotion
+                ? { duration: 0.01 }
+                : { ...defaultTransition, delay: 0.26 }
+            }
+            className="mx-auto mt-5 flex w-fit items-center gap-2.5 text-[15px] font-medium tracking-[-0.01em] text-text-muted transition hover:text-lavender sm:mt-6 sm:text-base"
+            aria-label={`Instagram ${instagramHandle}`}
+          >
+            <InstagramIcon className="h-5 w-5" />
+            <span>@{instagramHandle}</span>
+          </motion.a>
+        ) : null}
 
         <motion.button
           type="button"

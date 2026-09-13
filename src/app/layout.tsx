@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { LocationMap } from "@/components/layout/LocationMap";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ogImage, siteConfig } from "@/data/site";
@@ -100,6 +101,7 @@ export default function RootLayout({
         <ScrollToTop />
         <Header />
         <main id="obsah">{children}</main>
+        <LocationMap />
         <Footer />
       </body>
     </html>
