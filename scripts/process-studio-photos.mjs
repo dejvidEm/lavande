@@ -111,13 +111,13 @@ const jobs = [
     pos: "right",
   },
 
-  // Lektorka
+  // Lektorka — portrét Alexandry
   {
-    out: "instructor-alexandra.jpg",
-    from: "IMG_4942-662a469e-674a-4938-bdbd-57187f578c5b.jpg",
-    w: 900,
-    h: 1125,
-    pos: "left",
+    out: "instructor-alexandra-portrait.jpg",
+    from: "IMG_2595-860d8c86-6665-4d5e-8977-0ac2b2c635fd.jpg",
+    w: 800,
+    h: 1000,
+    pos: "centre",
   },
 
   // Referencie — štvorce

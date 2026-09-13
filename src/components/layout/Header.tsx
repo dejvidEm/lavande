@@ -137,6 +137,8 @@ export function Header() {
                     <div className="mt-6">
                       <Link
                         href={siteConfig.bookingUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={closeMenu}
                         className="inline-flex h-[52px] w-full items-center justify-center rounded-pill bg-lavender px-7 text-[15px] font-medium text-white transition-all duration-premium hover:bg-lavender-medium"
                       >

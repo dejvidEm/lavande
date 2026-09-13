@@ -42,8 +42,17 @@ export function Button({
   );
 
   if (href) {
+    const isExternal = href.startsWith("http://") || href.startsWith("https://");
+
     return (
-      <Link href={href} className={classes} aria-label={ariaLabel}>
+      <Link
+        href={href}
+        className={classes}
+        aria-label={ariaLabel}
+        {...(isExternal
+          ? { target: "_blank", rel: "noopener noreferrer" }
+          : {})}
+      >
         {children}
       </Link>
     );

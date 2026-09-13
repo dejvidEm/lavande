@@ -6,7 +6,7 @@ export const siteConfig = {
   url: "https://lavande.sk",
   locale: "sk_SK",
   language: "sk",
-  bookingUrl: "/#kontakt",
+  bookingUrl: "https://app.zenamu.com/lavande-studio?from=1789336800",
   scheduleUrl: "/#lekcie",
   email: "studio@lavande.sk",
   themeColor: "#897495",
@@ -70,7 +70,7 @@ export const siteImages = {
     avatar: "/images/lavande/about-avatar.jpg",
   },
   instructors: {
-    alexandra: "/images/lavande/instructor-alexandra.jpg",
+    alexandra: "/images/lavande/instructor-alexandra-portrait.jpg",
   },
   testimonials: {
     martina: "/images/lavande/testimonial-1.jpg",

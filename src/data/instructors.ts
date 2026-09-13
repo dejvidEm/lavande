@@ -23,8 +23,8 @@ export const leadInstructor: InstructorProfile = {
   role: "Zakladateľka & hlavná lektorka",
   bio: "Každú lekciu vedem s dôrazom na bezpečnú techniku, dych a pocit istoty v tele. Verím, že sila má byť jemná, vedomá a dlhodobo udržateľná.",
   image: siteImages.instructors.alexandra,
-  imageAlt: "Lektorka Alexandra pri cvičení na reformeri v štúdiu Lavande.",
-  objectPosition: "center 45%",
+  imageAlt: "Lektorka Alexandra v štúdiu Lavande.",
+  objectPosition: "center 22%",
   courses: [
     { id: "beginner", label: "Reformer začiatočníci" },
     { id: "intermediate", label: "Reformer mierne pokročilí" },
