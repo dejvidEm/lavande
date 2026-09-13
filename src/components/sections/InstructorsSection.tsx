@@ -38,12 +38,12 @@ export function InstructorsSection() {
                 sizes={imageSizes.split}
               />
               <div
-                className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(to_bottom_right,rgba(38,37,38,0.58)_0%,rgba(38,37,38,0.22)_34%,transparent_62%)]"
+                className="pointer-events-none absolute inset-0 z-[1] bg-[linear-gradient(to_bottom_left,rgba(38,37,38,0.58)_0%,rgba(38,37,38,0.22)_34%,transparent_62%)]"
                 aria-hidden="true"
               />
             </div>
 
-            <div className="absolute left-4 top-4 z-[2] flex flex-wrap gap-2.5 sm:left-6 sm:top-6 sm:gap-3">
+            <div className="absolute right-4 top-4 z-[2] flex flex-wrap justify-end gap-2.5 sm:right-6 sm:top-6 sm:gap-3">
               {instructor.courses.map((course) => (
                 <span
                   key={course.id}
