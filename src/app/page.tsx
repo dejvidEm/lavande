@@ -10,18 +10,35 @@ import { PricingSection } from "@/components/sections/PricingSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { buildFaqSchema } from "@/lib/seo";
+import { pageMetadata } from "@/lib/metadata";
+import {
+  buildFaqSchema,
+  buildLessonListSchema,
+  buildOfferCatalogSchema,
+} from "@/lib/seo";
+import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  alternates: {
-    canonical: "/",
+  ...pageMetadata({
+    title: siteConfig.title,
+    description: siteConfig.description,
+    path: "/",
+  }),
+  title: {
+    absolute: siteConfig.title,
   },
 };
 
 export default function HomePage() {
   return (
     <>
-      <JsonLd schema={buildFaqSchema()} />
+      <JsonLd
+        schema={[
+          buildFaqSchema(),
+          buildLessonListSchema(),
+          buildOfferCatalogSchema(),
+        ]}
+      />
       <HeroSection />
       <ServicesSection />
       <AboutSection />

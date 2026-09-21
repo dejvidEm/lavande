@@ -6,8 +6,8 @@ import { ArrowUp, ArrowUpRight } from "lucide-react";
 import { LavandeLogo } from "@/components/brand/LavandeLogo";
 import { LavenderBranch } from "@/components/brand/LavenderBranch";
 import { Container } from "@/components/layout/Container";
-import { footerNavLinks, footerSecondaryLinks } from "@/data/navigation";
-import { siteConfig } from "@/data/site";
+import { footerLessonLinks, footerNavLinks, footerSecondaryLinks } from "@/data/navigation";
+import { siteConfig, studioLocation } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 const currentYear = new Date().getFullYear();
@@ -102,6 +102,19 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
+              <h2 className="mt-8 text-sm font-medium text-white">Lekcie</h2>
+              <ul className="mt-4 space-y-3">
+                {footerLessonLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm text-white/75 transition hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </nav>
 
             <nav aria-label="Kontakt a právne informácie">
@@ -140,6 +153,17 @@ export function Footer() {
               className="text-white/80 underline-offset-2 hover:underline"
             >
               {siteConfig.email}
+            </a>
+            <span className="mx-2 text-white/30" aria-hidden="true">
+              ·
+            </span>
+            <a
+              href={studioLocation.externalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/80 underline-offset-2 hover:underline"
+            >
+              {studioLocation.label}
             </a>
           </p>
 

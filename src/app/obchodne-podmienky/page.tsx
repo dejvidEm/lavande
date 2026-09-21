@@ -2,34 +2,33 @@ import type { Metadata } from "next";
 import { LegalPageTemplate } from "@/components/sections/LegalPageTemplate";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { termsDocument } from "@/data/legal";
-import { ogImage, siteConfig } from "@/data/site";
-import { buildBreadcrumbSchema } from "@/lib/seo";
+import { pageMetadata } from "@/lib/metadata";
+import { buildBreadcrumbSchema, buildWebPageSchema } from "@/lib/seo";
 
-export const metadata: Metadata = {
+const path = `/${termsDocument.slug}`;
+
+export const metadata: Metadata = pageMetadata({
   title: termsDocument.metaTitle,
   description: termsDocument.metaDescription,
-  alternates: {
-    canonical: `/${termsDocument.slug}`,
-  },
-  openGraph: {
-    title: `${termsDocument.metaTitle} | ${siteConfig.name}`,
-    description: termsDocument.metaDescription,
-    url: `/${termsDocument.slug}`,
-    siteName: siteConfig.name,
-    locale: siteConfig.locale,
-    type: "article",
-    images: [{ ...ogImage }],
-  },
-};
+  path,
+  ogType: "article",
+});
 
 export default function TermsPage() {
   return (
     <>
       <JsonLd
-        schema={buildBreadcrumbSchema([
-          { name: "Domov", path: "/" },
-          { name: termsDocument.title, path: `/${termsDocument.slug}` },
-        ])}
+        schema={[
+          buildWebPageSchema({
+            path,
+            name: termsDocument.title,
+            description: termsDocument.metaDescription,
+          }),
+          buildBreadcrumbSchema([
+            { name: "Domov", path: "/" },
+            { name: termsDocument.title, path },
+          ]),
+        ]}
       />
       <LegalPageTemplate document={termsDocument} />
     </>

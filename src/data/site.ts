@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Lavande Studio",
-  title: "Lavande Studio | Reformer Pilates štúdio",
+  title: "Lavande Studio | Reformer Pilates Trebišov",
   description:
-    "Boutique Pilates štúdio pre vedomý pohyb, zdravé držanie tela, silu a pokoj. Tri úrovne Reformer Pilates v komornom prostredí, max. 4 osoby na lekcii.",
+    "Boutique Reformer Pilates štúdio v Trebišove. Vedomý pohyb, zdravé držanie tela a pokoj v komorných skupinách max. 4 osoby. Jána Kostru 1.",
   url: "https://lavande.sk",
   locale: "sk_SK",
   language: "sk",
@@ -12,13 +12,15 @@ export const siteConfig = {
   email: "lavandestudio7@gmail.com",
   themeColor: "#897495",
   keywords: [
+    "Reformer Pilates Trebišov",
+    "Pilates štúdio Trebišov",
     "Reformer Pilates",
-    "Pilates štúdio",
     "Pilates pre začiatočníkov",
-    "Pilates lekcie",
+    "Pilates lekcie Trebišov",
     "Lavande Studio",
     "vedomý pohyb",
     "zdravé držanie tela",
+    "Jána Kostru 1",
   ],
 } as const;
 
@@ -66,8 +68,13 @@ export const studioLocation = {
   label: studioAddressQuery,
   street: businessInfo.street,
   city: businessInfo.city,
+  region: "Košický kraj",
   embedSrc: `https://maps.google.com/maps?q=${encodeURIComponent(studioAddressQuery)}&hl=sk&z=16&output=embed`,
   externalUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(studioAddressQuery)}`,
+  geo: {
+    latitude: 48.624233,
+    longitude: 21.722422,
+  },
 } as const;
 
 export const siteImages = {

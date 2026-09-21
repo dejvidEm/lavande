@@ -21,18 +21,13 @@ export function HeroSection() {
   const prefersReducedMotion = useReducedMotion();
 
   const heroButtons = (
-    <>
-      <Button href={siteConfig.bookingUrl} className="h-[48px] flex-1 whitespace-nowrap px-3.5 text-sm sm:px-4 lg:h-[52px] lg:flex-none lg:px-7 lg:text-[15px]">
-        Rezervovať lekciu
-      </Button>
-      <Button
-        href={siteConfig.scheduleUrl}
-        variant="secondary"
-        className="h-[48px] flex-1 whitespace-nowrap border-white/30 bg-white/90 px-3.5 text-sm hover:bg-white sm:px-4 lg:h-[52px] lg:flex-none lg:px-7 lg:text-[15px]"
-      >
-        Pozrieť rozvrh
-      </Button>
-    </>
+    <Button
+      href={siteConfig.bookingUrl}
+      variant="secondary"
+      className="h-[48px] flex-1 whitespace-nowrap border-white/30 bg-white/90 px-3.5 text-sm hover:bg-white sm:px-4 lg:h-[52px] lg:flex-none lg:px-7 lg:text-[15px]"
+    >
+      Rezervovať lekciu
+    </Button>
   );
 
   return (
@@ -89,13 +84,13 @@ export function HeroSection() {
                       ? { duration: 0.01 }
                       : { ...defaultTransition, delay: 0.14 }
                   }
-                  className="lg:pt-2"
+                  className="lg:ml-auto lg:max-w-md lg:pt-2"
                 >
-                  <p className="max-w-md text-base leading-relaxed text-white/90 drop-shadow-[0_1px_10px_rgba(38,37,38,0.3)] sm:text-lg sm:leading-[1.65]">
+                  <p className="text-base leading-relaxed text-white/90 drop-shadow-[0_1px_10px_rgba(38,37,38,0.3)] sm:text-lg sm:leading-[1.65]">
                     Objav vedomý pohyb v komornom Pilates štúdiu, kde sa sila,
                     držanie tela a pokoj stretávajú v každej lekcii.
                   </p>
-                  <div className="mt-6 hidden flex-wrap gap-3 lg:flex">
+                  <div className="mt-6 hidden lg:flex lg:justify-end">
                     {heroButtons}
                   </div>
                 </motion.div>

@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/Footer";
 import { LocationMap } from "@/components/layout/LocationMap";
 import { ScrollToTop } from "@/components/layout/ScrollToTop";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { ogImage, siteConfig } from "@/data/site";
+import { ogImage, siteConfig, studioLocation } from "@/data/site";
 import { buildLocalBusinessSchema, buildWebSiteSchema } from "@/lib/seo";
 import "./globals.css";
 
@@ -27,13 +27,9 @@ export const metadata: Metadata = {
   authors: [{ name: siteConfig.name, url: siteConfig.url }],
   creator: siteConfig.name,
   publisher: siteConfig.name,
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title: siteConfig.title,
     description: siteConfig.description,
-    url: "/",
     siteName: siteConfig.name,
     locale: siteConfig.locale,
     type: "website",
@@ -63,13 +59,19 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  // Ikony deteguje Next.js automaticky: public/favicon.ico a app/apple-icon.png.
+  // Ikony: app/favicon.ico, app/icon.png, app/apple-icon.png + android-chrome v public/.
   manifest: "/manifest.webmanifest",
   category: "fitness",
   formatDetection: {
     telephone: false,
-    address: false,
+    address: true,
     email: false,
+  },
+  other: {
+    "geo.region": "SK-KI",
+    "geo.placename": "Trebišov",
+    "geo.position": `${studioLocation.geo.latitude};${studioLocation.geo.longitude}`,
+    ICBM: `${studioLocation.geo.latitude}, ${studioLocation.geo.longitude}`,
   },
 };
 

@@ -54,7 +54,12 @@ export function ServicesSection() {
 
                   <div className="relative z-10 mt-6 flex flex-1 flex-col">
                     <h3 className="line-clamp-2 min-h-[3.25rem] text-xl font-medium tracking-[-0.02em] text-text-primary">
-                      {service.title}
+                      <Link
+                        href={`/lekcie/${service.slug}`}
+                        className="transition hover:text-lavender"
+                      >
+                        {service.title}
+                      </Link>
                     </h3>
                     <p className="mt-2.5 flex-1 text-[15px] leading-relaxed text-text-secondary">
                       {service.description}

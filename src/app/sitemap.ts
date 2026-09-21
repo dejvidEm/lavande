@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
-import { getAllLessonSlugs } from "@/data/lesson-pages";
+import { lessonPages } from "@/data/lesson-pages";
+import { ogImage, siteImages } from "@/data/site";
 import { absoluteUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -9,26 +10,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: absoluteUrl("/"),
       lastModified,
-      changeFrequency: "monthly",
+      changeFrequency: "weekly",
       priority: 1,
+      images: [
+        absoluteUrl(ogImage.url),
+        absoluteUrl(siteImages.instructors.alexandra),
+        absoluteUrl(siteImages.about.main),
+      ],
     },
-    ...getAllLessonSlugs().map((slug) => ({
-      url: absoluteUrl(`/lekcie/${slug}`),
+    ...lessonPages.map((lesson) => ({
+      url: absoluteUrl(`/lekcie/${lesson.slug}`),
       lastModified,
       changeFrequency: "monthly" as const,
-      priority: 0.8,
+      priority: 0.9,
+      images: [absoluteUrl(lesson.image)],
     })),
     {
       url: absoluteUrl("/obchodne-podmienky"),
       lastModified,
       changeFrequency: "yearly",
-      priority: 0.3,
+      priority: 0.2,
     },
     {
       url: absoluteUrl("/ochrana-osobnych-udajov"),
       lastModified,
       changeFrequency: "yearly",
-      priority: 0.3,
+      priority: 0.2,
     },
   ];
 }

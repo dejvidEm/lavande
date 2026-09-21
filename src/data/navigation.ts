@@ -1,4 +1,5 @@
 import { socialLinks } from "./site";
+import { lessonPages } from "./lesson-pages";
 
 export type NavLink = {
   label: string;
@@ -15,6 +16,11 @@ export const mainNavLinks: NavLink[] = [
 ];
 
 export const footerNavLinks: NavLink[] = [...mainNavLinks];
+
+export const footerLessonLinks: NavLink[] = lessonPages.map((lesson) => ({
+  label: lesson.title,
+  href: `/lekcie/${lesson.slug}`,
+}));
 
 export const legalNavLinks: NavLink[] = [
   { label: "Obchodné podmienky", href: "/obchodne-podmienky" },

@@ -7,8 +7,12 @@ import {
   getLessonBySlug,
   getOtherLessons,
 } from "@/data/lesson-pages";
-import { siteConfig } from "@/data/site";
-import { buildBreadcrumbSchema, buildLessonSchema } from "@/lib/seo";
+import { pageMetadata } from "@/lib/metadata";
+import {
+  buildBreadcrumbSchema,
+  buildLessonSchema,
+  buildWebPageSchema,
+} from "@/lib/seo";
 
 type LessonPageProps = {
   params: Promise<{ slug: string }>;
@@ -35,33 +39,23 @@ export async function generateMetadata({
 
   const path = `/lekcie/${lesson.slug}`;
 
-  return {
+  return pageMetadata({
     title: lesson.title,
     description: lesson.metaDescription,
-    alternates: {
-      canonical: path,
+    path,
+    image: {
+      url: lesson.image,
+      alt: lesson.imageAlt,
+      width: 960,
+      height: 720,
     },
-    openGraph: {
-      title: `${lesson.title} | ${siteConfig.name}`,
-      description: lesson.metaDescription,
-      url: path,
-      siteName: siteConfig.name,
-      locale: siteConfig.locale,
-      type: "article",
-      images: [
-        {
-          url: lesson.image,
-          alt: lesson.imageAlt,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${lesson.title} | ${siteConfig.name}`,
-      description: lesson.metaDescription,
-      images: [lesson.image],
-    },
-  };
+    keywords: [
+      lesson.title,
+      "Reformer Pilates Trebišov",
+      "Lavande Studio",
+      lesson.level,
+    ],
+  });
 }
 
 export default async function LessonPage({ params }: LessonPageProps) {
@@ -73,16 +67,21 @@ export default async function LessonPage({ params }: LessonPageProps) {
   }
 
   const otherLessons = getOtherLessons(slug);
+  const path = `/lekcie/${lesson.slug}`;
 
   return (
     <>
       <JsonLd
         schema={[
           buildLessonSchema(lesson),
+          buildWebPageSchema({
+            path,
+            name: lesson.title,
+            description: lesson.metaDescription,
+          }),
           buildBreadcrumbSchema([
             { name: "Domov", path: "/" },
-            { name: "Lekcie", path: "/#lekcie" },
-            { name: lesson.title, path: `/lekcie/${lesson.slug}` },
+            { name: lesson.title, path },
           ]),
         ]}
       />

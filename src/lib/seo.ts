@@ -1,10 +1,22 @@
-import { businessInfo, ogImage, siteConfig, socialLinks } from "@/data/site";
+import {
+  businessInfo,
+  ogImage,
+  siteConfig,
+  socialLinks,
+  studioLocation,
+} from "@/data/site";
 import { faqItems } from "@/data/faq";
 import { leadInstructor } from "@/data/instructors";
-import type { LessonPage } from "@/data/lesson-pages";
+import { lessonPages, type LessonPage } from "@/data/lesson-pages";
+import { individualPlan, pricingPlans } from "@/data/pricing";
 
 export function absoluteUrl(path = "/"): string {
-  return new URL(path, siteConfig.url).toString();
+  if (path === "/" || path === "") {
+    return siteConfig.url;
+  }
+
+  const url = new URL(path, siteConfig.url).toString();
+  return url.endsWith("/") ? url.slice(0, -1) : url;
 }
 
 function definedSocialProfiles(): string[] {
@@ -16,6 +28,28 @@ function optional(key: string, value: string): Record<string, string> {
   return value ? { [key]: value } : {};
 }
 
+function euroAmount(price: string | number): string {
+  if (typeof price === "number") {
+    return price.toFixed(2);
+  }
+
+  const parsed = Number.parseFloat(price.replace(/[^\d.,]/g, "").replace(",", "."));
+  return Number.isFinite(parsed) ? parsed.toFixed(2) : price;
+}
+
+function isoDuration(label: string): string | undefined {
+  const match = label.match(/(\d+)\s*min/i);
+  return match ? `PT${match[1]}M` : undefined;
+}
+
+function organizationId(): string {
+  return absoluteUrl("/#organization");
+}
+
+function websiteId(): string {
+  return absoluteUrl("/#website");
+}
+
 export function buildLocalBusinessSchema() {
   const address = {
     "@type": "PostalAddress",
@@ -23,35 +57,63 @@ export function buildLocalBusinessSchema() {
     ...optional("streetAddress", businessInfo.street),
     ...optional("addressLocality", businessInfo.city),
     ...optional("postalCode", businessInfo.postalCode),
+    ...optional("addressRegion", studioLocation.region),
   };
 
   const sameAs = definedSocialProfiles();
 
   return {
     "@context": "https://schema.org",
-    "@type": "HealthAndBeautyBusiness",
-    "@id": absoluteUrl("/#organization"),
+    "@type": ["LocalBusiness", "SportsActivityLocation", "HealthAndBeautyBusiness"],
+    "@id": organizationId(),
     name: siteConfig.name,
     legalName: businessInfo.legalName,
     description: siteConfig.description,
     url: absoluteUrl("/"),
-    logo: absoluteUrl("/brand/lavande-studio-logo.png"),
-    image: absoluteUrl(ogImage.url),
+    logo: {
+      "@type": "ImageObject",
+      url: absoluteUrl("/brand/lavande-studio-logo.png"),
+    },
+    image: [
+      absoluteUrl(ogImage.url),
+      absoluteUrl(leadInstructor.image),
+    ],
     email: siteConfig.email,
     address,
-    hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-      [businessInfo.street, businessInfo.postalCode, businessInfo.city]
-        .filter(Boolean)
-        .join(", ")
-    )}`,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: studioLocation.geo.latitude,
+      longitude: studioLocation.geo.longitude,
+    },
+    hasMap: studioLocation.externalUrl,
+    priceRange: "17€-150€",
+    currenciesAccepted: "EUR",
+    areaServed: {
+      "@type": "City",
+      name: businessInfo.city,
+      containedInPlace: {
+        "@type": "AdministrativeArea",
+        name: studioLocation.region,
+      },
+    },
+    knowsLanguage: siteConfig.language,
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer service",
+      email: siteConfig.email,
+      availableLanguage: ["Slovak"],
+    },
     ...optional("telephone", businessInfo.phone),
     ...(sameAs.length > 0 ? { sameAs } : {}),
-    areaServed: businessInfo.city || businessInfo.country,
-    knowsLanguage: siteConfig.language,
     employee: {
       "@type": "Person",
       name: leadInstructor.name,
       jobTitle: leadInstructor.role,
+      image: absoluteUrl(leadInstructor.image),
+      worksFor: { "@id": organizationId() },
+    },
+    hasOfferCatalog: {
+      "@id": absoluteUrl("/#cennik"),
     },
   };
 }
@@ -60,12 +122,12 @@ export function buildWebSiteSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": absoluteUrl("/#website"),
+    "@id": websiteId(),
     name: siteConfig.name,
     url: absoluteUrl("/"),
     inLanguage: siteConfig.language,
     description: siteConfig.description,
-    publisher: { "@id": absoluteUrl("/#organization") },
+    publisher: { "@id": organizationId() },
   };
 }
 
@@ -73,6 +135,7 @@ export function buildFaqSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": absoluteUrl("/#faq"),
     mainEntity: faqItems.map((item) => ({
       "@type": "Question",
       name: item.question,
@@ -84,8 +147,72 @@ export function buildFaqSchema() {
   };
 }
 
+export function buildLessonListSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": absoluteUrl("/#lekcie"),
+    name: "Lekcie Reformer Pilates",
+    itemListOrder: "https://schema.org/ItemListOrderAscending",
+    numberOfItems: lessonPages.length,
+    itemListElement: lessonPages.map((lesson, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: lesson.title,
+      url: absoluteUrl(`/lekcie/${lesson.slug}`),
+    })),
+  };
+}
+
+export function buildOfferCatalogSchema() {
+  const lessonOffers = lessonPages.map((lesson) => ({
+    "@type": "Offer",
+    name: lesson.title,
+    url: absoluteUrl(`/lekcie/${lesson.slug}`),
+    priceCurrency: "EUR",
+    price: euroAmount(lesson.price),
+    availability: "https://schema.org/InStock",
+    itemOffered: {
+      "@type": "Service",
+      name: lesson.title,
+      provider: { "@id": organizationId() },
+    },
+  }));
+
+  const packOffers = pricingPlans.map((plan) => ({
+    "@type": "Offer",
+    name: plan.name,
+    url: plan.href?.startsWith("http")
+      ? plan.href
+      : absoluteUrl("/#cennik"),
+    priceCurrency: "EUR",
+    price: euroAmount(plan.price),
+    availability: "https://schema.org/InStock",
+  }));
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "@id": absoluteUrl("/#cennik"),
+    name: "Cenník Lavande Studio",
+    itemListElement: [
+      ...lessonOffers,
+      ...packOffers,
+      {
+        "@type": "Offer",
+        name: individualPlan.name,
+        url: absoluteUrl(individualPlan.href),
+        priceCurrency: "EUR",
+        price: euroAmount(individualPlan.price),
+        availability: "https://schema.org/InStock",
+      },
+    ],
+  };
+}
+
 export function buildLessonSchema(lesson: LessonPage) {
   const url = absoluteUrl(`/lekcie/${lesson.slug}`);
+  const duration = isoDuration(lesson.duration);
 
   return {
     "@context": "https://schema.org",
@@ -95,19 +222,47 @@ export function buildLessonSchema(lesson: LessonPage) {
     description: lesson.metaDescription,
     url,
     serviceType: "Reformer Pilates",
+    category: lesson.level,
     image: absoluteUrl(lesson.image),
-    provider: { "@id": absoluteUrl("/#organization") },
+    provider: { "@id": organizationId() },
+    areaServed: {
+      "@type": "City",
+      name: businessInfo.city,
+    },
     audience: {
       "@type": "Audience",
       audienceType: lesson.level,
     },
+    ...(duration ? { duration } : {}),
     offers: {
       "@type": "Offer",
       priceCurrency: "EUR",
-      price: String(lesson.price),
+      price: euroAmount(lesson.price),
       availability: "https://schema.org/InStock",
       url: absoluteUrl("/#cennik"),
     },
+  };
+}
+
+export function buildWebPageSchema({
+  path,
+  name,
+  description,
+}: {
+  path: string;
+  name: string;
+  description: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${absoluteUrl(path)}#webpage`,
+    url: absoluteUrl(path),
+    name,
+    description,
+    inLanguage: siteConfig.language,
+    isPartOf: { "@id": websiteId() },
+    about: { "@id": organizationId() },
   };
 }
 

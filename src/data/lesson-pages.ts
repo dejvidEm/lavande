@@ -43,7 +43,7 @@ export const lessonPages: LessonPage[] = [
     level: "Začiatočníci",
     price: 17,
     metaDescription:
-      "Reformer začiatočníci v Lavande Studio — technika, dýchanie a práca s reformerom v skupine do 4 osôb. Príď približne 10 minút pred začiatkom lekcie.",
+      "Reformer začiatočníci v Lavande Studio v Trebišove — technika, dýchanie a práca s reformerom v skupine do 4 osôb. Príď približne 10 minút pred začiatkom lekcie.",
     highlights: [
       "Naučíš sa správnu techniku, dýchanie a prácu s reformerom v bezpečnom tempe",
       "Príď približne 10 minút pred začiatkom každej lekcie",
@@ -85,7 +85,7 @@ export const lessonPages: LessonPage[] = [
     level: "Mierne pokročilí",
     price: 17,
     metaDescription:
-      "Reformer mierne pokročilí v Lavande Studio — náročnejšie zostavy a rozvoj sily, stability a kontroly pohybu pre klientov so zvládnutými základmi.",
+      "Reformer mierne pokročilí v Lavande Studio v Trebišove — náročnejšie zostavy a rozvoj sily, stability a kontroly pohybu pre klientov so zvládnutými základmi.",
     highlights: [
       "Rozvíjaj silu, stabilitu a kontrolu pohybu v náročnejších zostavách",
       "Väčšia variabilita cvikov a vyššia intenzita",
@@ -128,7 +128,7 @@ export const lessonPages: LessonPage[] = [
     level: "Pokročilí",
     price: 17,
     metaDescription:
-      "Reformer pokročilí v Lavande Studio — dynamické zostavy, vyššia intenzita a precízna kontrola pohybu pre klientov s pokročilými skúsenosťami.",
+      "Reformer pokročilí v Lavande Studio v Trebišove — dynamické zostavy, vyššia intenzita a precízna kontrola pohybu pre klientov s pokročilými skúsenosťami.",
     highlights: [
       "Náročnejšie zostavy, ktoré preveria tvoju silu, stabilitu aj kontrolu pohybu",
       "Dynamickejšie sekvencie a komplexnejšie cviky",
@@ -171,7 +171,7 @@ export const lessonPages: LessonPage[] = [
     level: "Všetky úrovne",
     price: 30,
     metaDescription:
-      "Individuálna lekcia Reformer Pilates v Lavande Studio — cvičenie jeden na jedného podľa tvojich cieľov a tempa. 50 minút za 30 €, iba po predchádzajúcej dohode.",
+      "Individuálna lekcia Reformer Pilates v Lavande Studio v Trebišove — cvičenie jeden na jedného podľa tvojich cieľov a tempa. 50 minút za 30 €, iba po predchádzajúcej dohode.",
     highlights: [
       "Celá lekcia patrí iba tebe",
       "Obsah a tempo podľa tvojich cieľov",
