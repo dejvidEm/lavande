@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { LocationMap } from "@/components/layout/LocationMap";
@@ -105,6 +106,7 @@ export default function RootLayout({
         <main id="obsah">{children}</main>
         <LocationMap />
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
